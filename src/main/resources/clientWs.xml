@@ -1,0 +1,106 @@
+<!-- 
+ 
+  Copyright 2016 ELOTECH GESTAO PUBLICA LTDA
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+      http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. 
+ 
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:sws="http://www.springframework.org/schema/web-services"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+  http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services-2.0.xsd
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+  http://www.springframework.org/schema/util
+  http://www.springframework.org/schema/util/spring-util-2.0.xsd
+  http://www.springframework.org/schema/oxm 
+  http://www.springframework.org/schema/oxm/spring-oxm-1.5.xsd"
+	default-autowire="byName">
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+
+		<property name="location">
+			<value>file:client.properties</value>
+		</property>
+	</bean>
+
+	<bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
+		<property name="defaultUri"
+			value="${ISS.url}" /> <!-- "http://localhost:8091/WebEloWSIssSmt" -->
+			
+		<property name="interceptors">
+			<list>
+				<ref local="wsClientSecurityInterceptor" />  
+				<ref local="payloadValidatingInterceptor" />
+			</list>
+		</property>
+		<property name="marshaller" ref="castorMarshaller" />
+		<property name="unmarshaller" ref="castorMarshaller" />
+
+	</bean>
+
+	<bean id="payloadValidatingInterceptor"
+		class="org.springframework.ws.client.support.interceptor.PayloadValidatingInterceptor">
+		<property name="schema"
+			value="classpath:nfse_v1_2.xsd" />
+		<property name="validateRequest" value="true" />
+		<property name="validateResponse" value="true" />
+	</bean>
+
+	<bean id="endpointExceptionResolverValidate"
+		class="br.com.elotech.spring.ws.EndpointExceptionResolverValidateClient" />
+
+	<bean id="wsClientSecurityInterceptor"
+		class="org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor">
+		<property name="securementActions" value="Signature" />  
+		<property name="securementUsername" value="${ISS.key.alias}" />
+		<property name="securementPassword" value="${ISS.key.securePassword}" />
+		<property name="securementSignatureCrypto" ref="wss4jCripto" />
+		<property name="validationSignatureCrypto" ref="wss4jCripto" />
+		<property name="securementSignatureKeyIdentifier" value="DirectReference" />
+		<property name="exceptionResolver"  ref="endpointExceptionResolverValidate" />
+	</bean> 
+
+	<bean name="wss4jCripto"
+		class="org.springframework.ws.soap.security.wss4j.support.CryptoFactoryBean">
+		<property name="keyStorePassword" value="${ISS.key.storePassword}" />
+		<property name="keyStoreLocation" value="file:${ISS.key.path}" />
+		<property name="keyStoreType" value="${ISS.key.type}" />
+		<property name="trustStorePassword" value="${ISS.key.trustStorePassword}" />
+	</bean>
+
+	<bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller"
+		p:mappingLocation="classpath:castor-mapping.xml" />
+		
+	<bean id="dirToSend" class="java.lang.String">
+		<constructor-arg type="java.lang.String" value="${ISS.dirToSend}"/>
+	</bean>
+
+	<bean id="dirSent" class="java.lang.String">
+		<constructor-arg type="java.lang.String" value="${ISS.dirSent}"/>
+	</bean>
+
+	<bean id="dirReceived" class="java.lang.String">
+		<constructor-arg type="java.lang.String" value="${ISS.dirReceived}"/>
+	</bean>
+
+	<bean id="serviceFactory" class="br.com.elotech.sits.service.ServiceFactory">
+		<property name="serviceType" value="${ISS.serviceType}"/>
+		<property name="dirReceived" ref="dirReceived"/>
+		<property name="dirSent" ref="dirSent"/>
+		<property name="dirToSend" ref="dirToSend"/>
+	</bean>
+	
+</beans>
