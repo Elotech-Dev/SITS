@@ -32,7 +32,7 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 
 		<property name="location">
-			<value>file:client.properties</value>
+			<value>file:${ELOTECH_HOME}${file.separator}SSL${file.separator}elotech.key.properties</value>
 		</property>
 	</bean>
 
@@ -76,7 +76,7 @@
 	<bean name="wss4jCripto"
 		class="org.springframework.ws.soap.security.wss4j.support.CryptoFactoryBean">
 		<property name="keyStorePassword" value="${ISS.key.storePassword}" />
-		<property name="keyStoreLocation" value="file:${ISS.key.path}" />
+		<property name="keyStoreLocation" value="${ISS.key.path}" />
 		<property name="keyStoreType" value="${ISS.key.type}" />
 		<property name="trustStorePassword" value="${ISS.key.trustStorePassword}" />
 	</bean>
