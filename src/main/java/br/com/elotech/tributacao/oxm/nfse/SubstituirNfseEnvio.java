@@ -15,38 +15,8 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class SubstituirNfseEnvio extends AbstractEnvioMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractSubstituirNfseEnvio;
 
-	private PedidoCancelamento pedidoCancelamento;
-
-	private DeclaracaoPrestacaoServico declaracaoPrestacaoServico;
-
-	public PedidoCancelamento getPedidoCancelamento() {
-		return pedidoCancelamento;
-	}
-
-	public void setPedidoCancelamento(PedidoCancelamento pedidoCancelamento) {
-		this.pedidoCancelamento = pedidoCancelamento;
-	}
-
-	public DeclaracaoPrestacaoServico getDeclaracaoPrestacaoServico() {
-		return declaracaoPrestacaoServico;
-	}
-
-	public void setDeclaracaoPrestacaoServico(
-			DeclaracaoPrestacaoServico declaracaoPrestacaoServico) {
-		this.declaracaoPrestacaoServico = declaracaoPrestacaoServico;
-	}
-
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("SubstituirNfseEnvio [pedidoCancelamento=");
-		builder.append(pedidoCancelamento);
-		builder.append(", declaracaoPrestacaoServico=");
-		builder.append(declaracaoPrestacaoServico);
-		builder.append("]");
-		return builder.toString()+super.toString();
-	}
+public class SubstituirNfseEnvio extends AbstractSubstituirNfseEnvio{
 			
 }

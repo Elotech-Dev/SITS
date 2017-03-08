@@ -15,28 +15,13 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class ConsultarNfseFaixaResposta extends AbstractRespostaMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractConsultarNfseFaixaResposta;
 
-	private ListaConsultaNfse listaConsultaNfse;
-	
-	public ListaConsultaNfse getListaConsultaNfse() {
-		return listaConsultaNfse;
-	}
-
-	public void setListaConsultaNfse(ListaConsultaNfse listaConsultaNfse) {
-		this.listaConsultaNfse = listaConsultaNfse;
-	}
-
+public class ConsultarNfseFaixaResposta extends AbstractConsultarNfseFaixaResposta {
 
 	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("ConsultarNfseFaixaResposta [listaConsultaNfse=");
-		builder.append(listaConsultaNfse);
-		builder.append(", listaMensagemRetorno=");
-		builder.append(getListaMensagemRetorno());
-		builder.append("]");
-		return builder.toString();
+	public String toString() {		
+		return super.toString();
 	}
 	
 	

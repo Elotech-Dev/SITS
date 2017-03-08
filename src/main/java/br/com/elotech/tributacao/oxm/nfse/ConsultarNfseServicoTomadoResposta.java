@@ -15,7 +15,9 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractConsultarNfseServicoTomadoResposta;
+
 public class ConsultarNfseServicoTomadoResposta extends
-		ConsultarNfseFaixaResposta {
+	AbstractConsultarNfseServicoTomadoResposta {
 
 }

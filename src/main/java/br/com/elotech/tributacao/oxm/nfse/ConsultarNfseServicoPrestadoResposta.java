@@ -15,7 +15,14 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractConsultarNfseServicoPrestadoResposta;
+
 public class ConsultarNfseServicoPrestadoResposta extends
-		ConsultarNfseFaixaResposta {
+	AbstractConsultarNfseServicoPrestadoResposta {
+	
+	@Override
+	public String toString() {		
+		return super.toString();
+	}
 
 }

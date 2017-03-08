@@ -18,10 +18,10 @@ package br.com.elotech.tributacao.oxm.nfse;
 import br.com.elotech.tributacao.castor.CastorEnumDef;
 
 /*
- 1 � RPS
- 2 � Nota Fiscal Conjugada (Mista)
- 3 � Cupom
- 4 � Nota Fiscal S�rie �nica 01-01
+ 1 RPS
+ 2 Nota Fiscal Conjugada (Mista)
+ 3 Cupom
+ 4 Nota Fiscal Série única 01-01
  */
 public enum TipoRps implements CastorEnumDef<TipoRps> {
 

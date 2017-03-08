@@ -15,6 +15,8 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class EnviarLoteRpsSincronoEnvio extends EnviarLoteRpsEnvio {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractEnviarLoteRpsSincronoEnvio;
+
+public class EnviarLoteRpsSincronoEnvio extends AbstractEnviarLoteRpsSincronoEnvio {
 
 }

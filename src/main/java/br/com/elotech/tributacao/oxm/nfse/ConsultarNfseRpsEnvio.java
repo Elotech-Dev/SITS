@@ -15,25 +15,13 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class ConsultarNfseRpsEnvio extends AbstractEnvioMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractConsultarNfseRpsEnvio;
 
-	private IdentificacaoRps identificacaoRps;
-
-	public IdentificacaoRps getIdentificacaoRps() {
-		return identificacaoRps;
-	}
-
-	public void setIdentificacaoRps(IdentificacaoRps identificacaoRps) {
-		this.identificacaoRps = identificacaoRps;
-	}
+public class ConsultarNfseRpsEnvio extends AbstractConsultarNfseRpsEnvio {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("ConsultarNfseRpsEnvio [identificacaoRps=");
-		builder.append(identificacaoRps);
-		builder.append("]");
-		return builder.toString()+super.toString();
-	}
 
+		return super.toString();
+	}
 }

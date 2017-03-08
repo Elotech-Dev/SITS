@@ -26,6 +26,9 @@ public class ServiceFactory {
 	
 	@Resource
 	private CastorMarshaller castorMarshaller;
+	
+	@Resource
+	private CastorMarshaller castorMarshallerNfse203;
 
 	@Resource
 	private String dirToSend;
@@ -38,12 +41,19 @@ public class ServiceFactory {
 
 	@Resource
 	private WebServiceTemplate webServiceTemplate;
+	
+	@Resource
+	private WebServiceTemplate webServiceVersao203Template;
 
 	@Resource
 	private String serviceType;
 	
 	public void setCastorMarshaller(CastorMarshaller castorMarshaller) {
 		this.castorMarshaller = castorMarshaller;
+	}
+	
+	public void setCastorMarshallerNfse203(CastorMarshaller castorMarshallerNfse203) {
+		this.castorMarshallerNfse203 = castorMarshallerNfse203;
 	}
 
 	public void setDirToSend(String dirToSend) {
@@ -60,6 +70,10 @@ public class ServiceFactory {
 
 	public void setWebServiceTemplate(WebServiceTemplate webServiceTemplate) {
 		this.webServiceTemplate = webServiceTemplate;
+	}
+
+	public void setWebServiceVersao203Template(WebServiceTemplate webServiceVersao203Template) {
+		this.webServiceVersao203Template = webServiceVersao203Template;
 	}
 
 	public void setServiceType(String serviceType) {
@@ -90,10 +104,12 @@ public class ServiceFactory {
 	private <T extends AbstractService> T attrDeps(T service) {
 		
 		service.castorMarshaller = castorMarshaller;
+		service.castorMarshallerNfse203 = castorMarshallerNfse203;
 		service.dirReceived = dirReceived;
 		service.dirToSend = dirToSend;
 		service.dirSent = dirSent;
 		service.webServiceTemplate = webServiceTemplate;
+		service.webServiceVersao203Template = webServiceVersao203Template;
 		
 		return service;
 	}

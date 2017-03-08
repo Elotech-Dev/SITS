@@ -18,6 +18,8 @@ package br.com.elotech.tributacao.oxm.nfse;
 public class SubstituicaoNfse {
 
 	private InfSubstituicaoNfse substituicaoNfse;
+	
+	private String versao;
 
 	public InfSubstituicaoNfse getSubstituicaoNfse() {
 		return substituicaoNfse;
@@ -26,8 +28,15 @@ public class SubstituicaoNfse {
 	public void setSubstituicaoNfse(InfSubstituicaoNfse substituicaoNfse) {
 		this.substituicaoNfse = substituicaoNfse;
 	}
-
 	
+	public String getVersao() {
+		return versao;
+	}
+
+	public void setVersao(String versao) {
+		this.versao = versao;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

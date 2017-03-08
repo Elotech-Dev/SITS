@@ -17,6 +17,8 @@ package br.com.elotech.tributacao.oxm.nfse;
 
 import java.util.Date;
 
+import br.com.elotech.tributacao.oxm.nfse203.Prestador;
+
 public class InfDeclaracaoPrestacaoServico {
 
 	private InfRps rps;
@@ -26,6 +28,8 @@ public class InfDeclaracaoPrestacaoServico {
 	private DadosServico servico;
 
 	private DadosPrestador prestador;
+	
+	private Prestador identificacaoPrestador;
 
 	private DadosTomador tomador;
 
@@ -108,6 +112,15 @@ public class InfDeclaracaoPrestacaoServico {
 
 	public void setIncentivoFiscal(SimNao incentivoFiscal) {
 		this.incentivoFiscal = incentivoFiscal;
+	}
+	
+	public Prestador getIdentificacaoPrestador() {
+		return identificacaoPrestador;
+	}
+
+	public void setIdentificacaoPrestador(
+			Prestador identificacaoPrestador) {
+		this.identificacaoPrestador = identificacaoPrestador;
 	}
 
 	@Override

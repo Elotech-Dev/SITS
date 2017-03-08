@@ -15,12 +15,8 @@
 
 package br.com.elotech.sits.service;
 
-import java.io.IOException;
-
-import org.springframework.oxm.XmlMappingException;
-
 public interface Service {
 
-	void send() throws XmlMappingException, IOException;
+	void send() throws Exception;
 
 }

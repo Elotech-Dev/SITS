@@ -21,9 +21,11 @@ public class ItemServico {
 
 	private String itemListaServico;
 
-	private Integer codigoCnae;
+	private String codigoCnae;
 
 	private String descricao;
+	
+	private Unidade unidade;
 
 	private SimNao tributavel;
 
@@ -45,11 +47,11 @@ public class ItemServico {
 		this.itemListaServico = itemListaServico;
 	}
 
-	public Integer getCodigoCnae() {
+	public String getCodigoCnae() {
 		return codigoCnae;
 	}
 
-	public void setCodigoCnae(Integer codigoCnae) {
+	public void setCodigoCnae(String codigoCnae) {
 		this.codigoCnae = codigoCnae;
 	}
 
@@ -107,6 +109,14 @@ public class ItemServico {
 
 	public void setDadosDeducao(DadosDeducao dadosDeducao) {
 		this.dadosDeducao = dadosDeducao;
+	}
+	
+	public Unidade getUnidade() {
+		return unidade;
+	}
+
+	public void setUnidade(Unidade unidade) {
+		this.unidade = unidade;
 	}
 
 	@Override

@@ -18,6 +18,8 @@ package br.com.elotech.tributacao.oxm.nfse;
 public class DadosTomador {
 
 	private IdentificacaoTomador identificacaoTomador;
+	
+	private String nifTomador;
 
 	private String razaoSocial;
 
@@ -67,6 +69,14 @@ public class DadosTomador {
 	public void setContato(Contato contato) {
 		this.contato = contato;
 	}
+	
+	public String getNifTomador() {
+		return nifTomador;
+	}
+
+	public void setNifTomador(String nifTomador) {
+		this.nifTomador = nifTomador;
+	}
 
 	@Override
 	public String toString() {
@@ -75,6 +85,8 @@ public class DadosTomador {
 		builder.append(identificacaoTomador);
 		builder.append(", razaoSocial=");
 		builder.append(razaoSocial);
+		builder.append(", nifTomador=");
+		builder.append(nifTomador);
 		builder.append(", endereco=");
 		builder.append(endereco);
 		builder.append(", contato=");

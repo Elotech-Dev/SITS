@@ -18,13 +18,13 @@ package br.com.elotech.tributacao.oxm.nfse;
 import br.com.elotech.tributacao.castor.CastorEnumDef;
 
 /*
- 1 Exigível;
- 2 Não incidência;
- 3 Isenção;
- 4 Exportação;
- 5 Imunidade;
- 6 Exigibilidade Suspensa por Decisão Judicial;
- 7 Exigibilidade Suspensa por Processo Administrativo
+ 1  Exigível;
+ 2  Não incidência;
+ 3  Isenção;
+ 4  Exportação;
+ 5  Imunidade;
+ 6  Exigibilidade Suspensa por Decisão Judicial;
+ 7  Exigibilidade Suspensa por Processo Administrativo
  */
 
 public enum ExigibilidadeIss implements CastorEnumDef<ExigibilidadeIss> {
@@ -48,14 +48,20 @@ public enum ExigibilidadeIss implements CastorEnumDef<ExigibilidadeIss> {
 		throw new IllegalArgumentException(value);
 	}
 
-	public static ExigibilidadeIss getById(Long exigibilidadeISS) {
+	public String getValueStr(ExigibilidadeIss object) {
 
-		if (exigibilidadeISS == null) {
+		return object.valor;
+		
+	}
+
+	public static ExigibilidadeIss getById(Long idExigibilidadeISS) {
+
+		if (idExigibilidadeISS == null) {
 			return ExigibilidadeIss.EXIGIVEL;
 		}
 
 		for (ExigibilidadeIss exigibilidadeIss : ExigibilidadeIss.values()) {
-			if (exigibilidadeIss.valor.equals(exigibilidadeIss.toString())) {
+			if (exigibilidadeIss.valor.equals(idExigibilidadeISS.toString())) {
 				return exigibilidadeIss;
 			}
 		}
@@ -67,11 +73,4 @@ public enum ExigibilidadeIss implements CastorEnumDef<ExigibilidadeIss> {
 
 		return new Long(valor);
 	}
-
-	public String getValueStr(ExigibilidadeIss object) {
-
-		return object.valor;
-		
-	}
-	
 }

@@ -20,6 +20,8 @@ public class DadosIntermediario {
 	private IdentificacaoIntermediario identificacaoIntermediario;
 
 	private String razaoSocial;
+	
+	private Long codigoMunicipio;
 
 	public IdentificacaoIntermediario getIdentificacaoIntermediario() {
 		return identificacaoIntermediario;
@@ -37,6 +39,14 @@ public class DadosIntermediario {
 	public void setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
 	}
+	
+	public Long getCodigoMunicipio() {
+		return codigoMunicipio;
+	}
+
+	public void setCodigoMunicipio(Long codigoMunicipio) {
+		this.codigoMunicipio = codigoMunicipio;
+	}
 
 	@Override
 	public String toString() {
@@ -45,6 +55,8 @@ public class DadosIntermediario {
 		builder.append(identificacaoIntermediario);
 		builder.append(", razaoSocial=");
 		builder.append(razaoSocial);
+		builder.append(", codigoMunicipio=");
+		builder.append(codigoMunicipio);
 		builder.append("]");
 		return builder.toString();
 	}

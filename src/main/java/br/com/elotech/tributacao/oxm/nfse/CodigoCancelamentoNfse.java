@@ -20,7 +20,7 @@ import br.com.elotech.tributacao.castor.CastorEnumDef;
 /*
 
  1 Erro na emissão
- 2 Servico não prestado
+ 2 Serviço não prestado
  3 Erro de assinatura
  4 Duplicidade da nota
  5 Erro de processamento

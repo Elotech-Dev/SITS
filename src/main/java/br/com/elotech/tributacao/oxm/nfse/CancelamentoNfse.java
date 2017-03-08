@@ -19,7 +19,8 @@ public class CancelamentoNfse {
 
 	private ConfirmacaoCancelamento confirmacaoCancelamento;
 	
-
+	private String versao;
+	
 	public ConfirmacaoCancelamento getConfirmacaoCancelamento() {
 		return confirmacaoCancelamento;
 	}
@@ -27,6 +28,14 @@ public class CancelamentoNfse {
 	public void setConfirmacaoCancelamento(
 			ConfirmacaoCancelamento confirmacaoCancelamento) {
 		this.confirmacaoCancelamento = confirmacaoCancelamento;
+	}
+	
+	public String getVersao() {
+		return versao;
+	}
+
+	public void setVersao(String versao) {
+		this.versao = versao;
 	}
 
 	@Override

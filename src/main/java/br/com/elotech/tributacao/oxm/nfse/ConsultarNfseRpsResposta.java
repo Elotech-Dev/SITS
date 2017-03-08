@@ -15,28 +15,13 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class ConsultarNfseRpsResposta extends AbstractRespostaMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractConsultarNfseRpsResposta;
 
-	private CompNfse compNfse;
-	
-	public CompNfse getCompNfse() {
-		return compNfse;
-	}
-
-	public void setCompNfse(CompNfse compNfse) {
-		this.compNfse = compNfse;
-	}
-
+public class ConsultarNfseRpsResposta extends AbstractConsultarNfseRpsResposta {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("ConsultarNfseRpsResposta [compNfse=");
-		builder.append(compNfse);
-		builder.append(", listaMensagemRetorno=");
-		builder.append(getListaMensagemRetorno());
-		builder.append("]");
-		return builder.toString();
+		return super.toString();
 	}
-		
+
 }
