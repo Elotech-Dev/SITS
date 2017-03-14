@@ -14,7 +14,7 @@
   limitations under the License. 
  
  -->
-
+ 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"
 	xmlns="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"
@@ -546,13 +546,13 @@
 				maxOccurs="1" />
 			<xsd:element name="AliquotaCofins" type="tsAliquota" minOccurs="0"
 				maxOccurs="1" />
-			<xsd:element name="RetidoConfins" type="tsSimNao" minOccurs="0"
+			<xsd:element name="RetidoCofins" type="tsSimNao" minOccurs="0"
 				maxOccurs="1" />	
 			<xsd:element name="ValorCofins" type="tsValor" minOccurs="0"
 				maxOccurs="1" />
-			<xsd:element name="AliquotaINSS" type="tsAliquota" minOccurs="0"
+			<xsd:element name="AliquotaInss" type="tsAliquota" minOccurs="0"
 				maxOccurs="1" />
-			<xsd:element name="RetidoINSS" type="tsSimNao" minOccurs="0"
+			<xsd:element name="RetidoInss" type="tsSimNao" minOccurs="0"
 				maxOccurs="1" />
 			<xsd:element name="ValorInss" type="tsValor" minOccurs="0"
 				maxOccurs="1" />
@@ -661,7 +661,7 @@
 			<xsd:element name="Discriminacao" type="tsDiscriminacao"
 				minOccurs="1" maxOccurs="1" />
 			<xsd:element name="CodigoTributacaoMunicipio" type="tsCodigoTributacao"
-				minOccurs="1" maxOccurs="1" />
+				minOccurs="0" maxOccurs="1" />
 			<xsd:element name="CodigoNbs" type="tsCodigoNbs"
 				minOccurs="0" maxOccurs="1" />	
 			<xsd:element name="CodigoMunicipio" type="tsCodigoMunicipioIbge"

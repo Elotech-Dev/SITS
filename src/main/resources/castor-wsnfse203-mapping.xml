@@ -1,6 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Object Mapping DTD Version 1.0//EN"
                          "mapping.dtd">
+                         
+<!-- 
+ 
+  Copyright 2016 ELOTECH GESTAO PUBLICA LTDA
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+      http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. 
+ 
+ -->	                         
+                         
 <mapping>
 
 
@@ -138,6 +156,27 @@
 			type="br.com.elotech.tributacao.oxm.nfse.CancelamentoNfse">
 			<bind-xml name="NfseCancelamento" />
 		</field>
+
+	</class>
+	
+	<class name="br.com.elotech.tributacao.oxm.nfse203.MensagemRetorno">
+
+		<map-to xml="MensagemRetorno"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v1_2.xsd" />
+
+		<field name="identificacaoRps"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRps">
+			<bind-xml name="IdentificacaoRps" />
+		</field>
+
+		<field name="codigo" type="string">
+			<bind-xml name="Codigo" node="element" />
+		</field>
+
+		<field name="mensagem" type="string">
+			<bind-xml name="Mensagem" node="element" />
+		</field>
+
 
 	</class>
 
@@ -295,7 +334,7 @@
 			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
 
 		<field name="listMensagemRetornoLote"
-			type="br.com.elotech.tributacao.oxm.nfse.MensagemRetornoLote"
+			type="br.com.elotech.tributacao.oxm.nfse203.MensagemRetorno"
 			collection="arraylist">
 			<bind-xml name="MensagemRetorno" />
 		</field>
@@ -514,7 +553,7 @@
 		</field>
 					
 		<field name="valorTotTributos" type="big-decimal">
-			<bind-xml name="ValorTotTributos" node="element" />
+			<bind-xml name="ValTotTributos" node="element" />
 		</field>
 
 		<field name="valorIss" type="big-decimal">
@@ -900,6 +939,19 @@
 		</field>
 
 	</class>
+	
+	<class name="br.com.elotech.tributacao.oxm.nfse203.Rps">
+
+		<map-to xml="Rps"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="infDeclaracaoPrestacaoServico"
+			type="br.com.elotech.tributacao.oxm.nfse.InfDeclaracaoPrestacaoServico">
+			<bind-xml name="InfDeclaracaoPrestacaoServico" />
+		</field>
+
+	</class>
+		
 
 	<class name="br.com.elotech.tributacao.oxm.nfse.DeclaracaoPrestacaoServico">
 
@@ -1333,7 +1385,7 @@
 			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
 
 		<field name="listDeclaracaoPrestacaoServico"
-			type="br.com.elotech.tributacao.oxm.nfse.DeclaracaoPrestacaoServico"
+			type="br.com.elotech.tributacao.oxm.nfse203.Rps"
 			collection="arraylist">
 			<bind-xml name="Rps" />
 		</field>
@@ -1366,7 +1418,7 @@
 		</field>
 		
 		<field name="versao" type="string">
-			<bind-xml name="Versao" node="attribute" />
+			<bind-xml name="versao" node="attribute" />
 		</field>
 
 	</class>

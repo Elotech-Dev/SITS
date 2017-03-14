@@ -15,8 +15,8 @@
 
 package br.com.elotech.tributacao.oxm.nfse203;
 
-import br.com.elotech.tributacao.oxm.nfse.IdentificacaoPrestador;
+import br.com.elotech.tributacao.oxm.nfse.MensagemRetornoLote;
 
-public class Prestador extends IdentificacaoPrestador{
+public class MensagemRetorno extends MensagemRetornoLote{
 
 }
