@@ -30,7 +30,7 @@ import br.com.elotech.sits.service.ServiceFactory;
 public class App {
 
 	private static final Map<String, Class<? extends Action>> ACTIONS;
-
+	
 	static {
 
 		Map<String, Class<? extends Action>> actions = new HashMap<String, Class<? extends Action>>();

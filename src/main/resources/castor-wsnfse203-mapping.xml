@@ -142,7 +142,7 @@
 		</field>
 
 		<field name="versao" type="string">
-			<bind-xml name="Versao" node="attribute" />
+			<bind-xml name="versao" node="attribute" />
 		</field>
 
 	</class>
@@ -1029,7 +1029,7 @@
 		</field>
 
 		<field name="versao" type="string">
-			<bind-xml name="Versao" node="attribute" />
+			<bind-xml name="versao" node="attribute" />
 		</field>
 
 	</class>
@@ -1057,7 +1057,7 @@
 		</field>
 
 		<field name="versao" type="string">
-			<bind-xml name="Versao" node="attribute" />
+			<bind-xml name="versao" node="attribute" />
 		</field>
 
 	</class>

@@ -32,7 +32,7 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 
 		<property name="location">
-			<value>file:${ELOTECH_HOME}${file.separator}SSL${file.separator}elotech.key.properties</value>
+			<value>file:${SITS_HOME}${file.separator}client.properties</value>
 		</property>
 	</bean>
 
@@ -99,17 +99,17 @@
 	<bean name="wss4jCripto"
 		class="org.springframework.ws.soap.security.wss4j.support.CryptoFactoryBean">
 		<property name="keyStorePassword" value="${ISS.key.storePassword}" />
-		<property name="keyStoreLocation" value="${ISS.key.path}" />
+		<property name="keyStoreLocation" value="file:${ISS.key.path}" />
 		<property name="keyStoreType" value="${ISS.key.type}" />
 		<property name="trustStorePassword" value="${ISS.key.trustStorePassword}" />
 	</bean>
 
 	<bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller"
 		p:mappingLocation="classpath:castor-mapping.xml" />
-
+		
 	<bean id="castorMarshallerNfse203" class="org.springframework.oxm.castor.CastorMarshaller"
 		p:mappingLocation="classpath:castor-wsnfse203-mapping.xml" />
-				
+		
 	<bean id="dirToSend" class="java.lang.String">
 		<constructor-arg type="java.lang.String" value="${ISS.dirToSend}"/>
 	</bean>
