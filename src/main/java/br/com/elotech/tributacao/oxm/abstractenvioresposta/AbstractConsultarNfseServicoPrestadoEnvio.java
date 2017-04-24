@@ -17,6 +17,7 @@ package br.com.elotech.tributacao.oxm.abstractenvioresposta;
 
 import br.com.elotech.tributacao.oxm.nfse.IdentificacaoIntermediario;
 import br.com.elotech.tributacao.oxm.nfse.IdentificacaoTomador;
+import br.com.elotech.tributacao.oxm.nfse.PeriodoCompetencia;
 import br.com.elotech.tributacao.oxm.nfse.PeriodoData;
 
 public abstract class AbstractConsultarNfseServicoPrestadoEnvio extends AbstractEnvioMsg {
@@ -24,6 +25,8 @@ public abstract class AbstractConsultarNfseServicoPrestadoEnvio extends Abstract
 	private Integer numeroNfse;
 
 	private PeriodoData periodoEmissao;
+	
+	private PeriodoCompetencia periodoCompetencia;
 
 	private IdentificacaoTomador identificacaoTomador;
 
@@ -73,6 +76,14 @@ public abstract class AbstractConsultarNfseServicoPrestadoEnvio extends Abstract
 
 	public void setPagina(Integer pagina) {
 		this.pagina = pagina;
+	}
+	
+	public PeriodoCompetencia getPeriodoCompetencia() {
+		return periodoCompetencia;
+	}
+
+	public void setPeriodoCompetencia(PeriodoCompetencia periodoCompetencia) {
+		this.periodoCompetencia = periodoCompetencia;
 	}
 
 	@Override

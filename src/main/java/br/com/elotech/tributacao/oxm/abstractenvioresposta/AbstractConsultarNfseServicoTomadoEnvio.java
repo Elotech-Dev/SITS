@@ -17,6 +17,8 @@ package br.com.elotech.tributacao.oxm.abstractenvioresposta;
 
 import br.com.elotech.tributacao.oxm.nfse.IdentificacaoIntermediario;
 import br.com.elotech.tributacao.oxm.nfse.IdentificacaoPrestador;
+import br.com.elotech.tributacao.oxm.nfse.IdentificacaoTomador;
+import br.com.elotech.tributacao.oxm.nfse.PeriodoCompetencia;
 import br.com.elotech.tributacao.oxm.nfse.PeriodoData;
 
 public abstract class AbstractConsultarNfseServicoTomadoEnvio extends AbstractEnvioMsg {
@@ -25,7 +27,11 @@ public abstract class AbstractConsultarNfseServicoTomadoEnvio extends AbstractEn
 	
 	private PeriodoData periodoEmissao;
 	
+	private PeriodoCompetencia periodoCompetencia;
+	
 	private IdentificacaoPrestador identificacaoPrestador;
+	
+	private IdentificacaoTomador identificacaoTomador;
 		
 	private IdentificacaoIntermediario identificacaoIntermediario;
 	
@@ -48,8 +54,6 @@ public abstract class AbstractConsultarNfseServicoTomadoEnvio extends AbstractEn
 		this.periodoEmissao = periodoEmissao;
 	}
 
-	
-
 	public IdentificacaoPrestador getIdentificacaoPrestador() {
 		return identificacaoPrestador;
 	}
@@ -58,8 +62,6 @@ public abstract class AbstractConsultarNfseServicoTomadoEnvio extends AbstractEn
 			IdentificacaoPrestador identificacaoPrestador) {
 		this.identificacaoPrestador = identificacaoPrestador;
 	}
-
-
 
 	public IdentificacaoIntermediario getIdentificacaoIntermediario() {
 		return identificacaoIntermediario;
@@ -76,6 +78,22 @@ public abstract class AbstractConsultarNfseServicoTomadoEnvio extends AbstractEn
 
 	public void setPagina(Integer pagina) {
 		this.pagina = pagina;
+	}
+	
+	public PeriodoCompetencia getPeriodoCompetencia() {
+		return periodoCompetencia;
+	}
+
+	public void setPeriodoCompetencia(PeriodoCompetencia periodoCompetencia) {
+		this.periodoCompetencia = periodoCompetencia;
+	}
+		
+	public IdentificacaoTomador getIdentificacaoTomador() {
+		return identificacaoTomador;
+	}
+
+	public void setIdentificacaoTomador(IdentificacaoTomador identificacaoTomador) {
+		this.identificacaoTomador = identificacaoTomador;
 	}
 
 	@Override

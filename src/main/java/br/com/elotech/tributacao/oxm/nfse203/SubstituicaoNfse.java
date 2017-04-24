@@ -16,7 +16,28 @@
 package br.com.elotech.tributacao.oxm.nfse203;
 
 import br.com.elotech.tributacao.oxm.nfse.DeclaracaoPrestacaoServico;
+import br.com.elotech.tributacao.oxm.nfse.PedidoCancelamento;
 
-public class Rps extends DeclaracaoPrestacaoServico{
+public class SubstituicaoNfse {
+	
+	private PedidoCancelamento pedidoCancelamento;
+
+	private DeclaracaoPrestacaoServico declaracaoPrestacaoServico;
+
+	public PedidoCancelamento getPedidoCancelamento() {
+		return pedidoCancelamento;
+	}
+
+	public void setPedidoCancelamento(PedidoCancelamento pedidoCancelamento) {
+		this.pedidoCancelamento = pedidoCancelamento;
+	}
+
+	public DeclaracaoPrestacaoServico getDeclaracaoPrestacaoServico() {
+		return declaracaoPrestacaoServico;
+	}
+
+	public void setDeclaracaoPrestacaoServico(DeclaracaoPrestacaoServico declaracaoPrestacaoServico) {
+		this.declaracaoPrestacaoServico = declaracaoPrestacaoServico;
+	}	
 
 }

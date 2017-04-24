@@ -17,12 +17,15 @@ package br.com.elotech.tributacao.oxm.abstractenvioresposta;
 
 import br.com.elotech.tributacao.oxm.nfse.DeclaracaoPrestacaoServico;
 import br.com.elotech.tributacao.oxm.nfse.PedidoCancelamento;
+import br.com.elotech.tributacao.oxm.nfse203.SubstituicaoNfse;
 
 public abstract class AbstractSubstituirNfseEnvio extends AbstractEnvioMsg {
 
 	private PedidoCancelamento pedidoCancelamento;
 
 	private DeclaracaoPrestacaoServico declaracaoPrestacaoServico;
+	
+	private SubstituicaoNfse substituicaoNfse;
 
 	public PedidoCancelamento getPedidoCancelamento() {
 		return pedidoCancelamento;
@@ -39,6 +42,14 @@ public abstract class AbstractSubstituirNfseEnvio extends AbstractEnvioMsg {
 	public void setDeclaracaoPrestacaoServico(
 			DeclaracaoPrestacaoServico declaracaoPrestacaoServico) {
 		this.declaracaoPrestacaoServico = declaracaoPrestacaoServico;
+	}
+	
+	public SubstituicaoNfse getSubstituicaoNfse() {
+		return substituicaoNfse;
+	}
+
+	public void setSubstituicaoNfse(SubstituicaoNfse substituicaoNfse) {
+		this.substituicaoNfse = substituicaoNfse;
 	}
 
 	@Override

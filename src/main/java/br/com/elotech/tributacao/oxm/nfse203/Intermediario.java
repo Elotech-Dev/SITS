@@ -15,8 +15,8 @@
 
 package br.com.elotech.tributacao.oxm.nfse203;
 
-import br.com.elotech.tributacao.oxm.nfse.DeclaracaoPrestacaoServico;
+import br.com.elotech.tributacao.oxm.nfse.IdentificacaoIntermediario;
 
-public class Rps extends DeclaracaoPrestacaoServico{
+public class Intermediario extends IdentificacaoIntermediario{
 
 }

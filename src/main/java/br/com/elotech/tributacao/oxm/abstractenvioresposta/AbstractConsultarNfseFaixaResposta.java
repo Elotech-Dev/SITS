@@ -16,10 +16,13 @@
 package br.com.elotech.tributacao.oxm.abstractenvioresposta;
 
 import br.com.elotech.tributacao.oxm.nfse.ListaConsultaNfse;
+import br.com.elotech.tributacao.oxm.nfse203.ListaNfse;
 
 public abstract class AbstractConsultarNfseFaixaResposta extends AbstractRespostaMsg {
 
 	private ListaConsultaNfse listaConsultaNfse;
+	
+	private ListaNfse listaNfse;
 	
 	public ListaConsultaNfse getListaConsultaNfse() {
 		return listaConsultaNfse;
@@ -28,7 +31,14 @@ public abstract class AbstractConsultarNfseFaixaResposta extends AbstractRespost
 	public void setListaConsultaNfse(ListaConsultaNfse listaConsultaNfse) {
 		this.listaConsultaNfse = listaConsultaNfse;
 	}
+	
+	public ListaNfse getListaNfse() {
+		return listaNfse;
+	}
 
+	public void setListaNfse(ListaNfse listaNfse) {
+		this.listaNfse = listaNfse;
+	}
 
 	@Override
 	public String toString() {
