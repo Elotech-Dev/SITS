@@ -1,22 +1,9 @@
-/* 
- * Copyright 2016 ELOTECH GESTAO PUBLICA LTDA
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *     http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License. 
- */
-
 package br.com.elotech.tributacao.oxm.nfse;
 
 import java.math.BigDecimal;
 import java.util.Date;
+
+import br.com.elotech.tributacao.oxm.nfse203.PrestadorServico;
 
 public class InfNfse {
 
@@ -33,6 +20,8 @@ public class InfNfse {
 	private ValoresNfse valoresNfse;
 
 	private BigDecimal valorCredito;
+	
+	private PrestadorServico prestador;
 
 	private IdentificacaoOrgaoGerador orgaoGerador;
 
@@ -120,6 +109,14 @@ public class InfNfse {
 			DeclaracaoPrestacaoServico declaracaoPrestacaoServico) {
 		this.declaracaoPrestacaoServico = declaracaoPrestacaoServico;
 	}
+	
+	public PrestadorServico getPrestador() {
+		return prestador;
+	}
+
+	public void setPrestador(PrestadorServico prestador) {
+		this.prestador = prestador;
+	}
 
 	@Override
 	public String toString() {
@@ -140,6 +137,8 @@ public class InfNfse {
 		builder.append(valorCredito);
 		builder.append(", orgaoGerador=");
 		builder.append(orgaoGerador);
+		builder.append(", prestador=");
+		builder.append(prestador);
 		builder.append(", declaracaoPrestacaoServico=");
 		builder.append(declaracaoPrestacaoServico);
 		builder.append(", chaveAcesso=");

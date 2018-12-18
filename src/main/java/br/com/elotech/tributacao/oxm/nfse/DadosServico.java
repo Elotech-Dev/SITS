@@ -24,6 +24,10 @@ public class DadosServico {
 	private ResponsavelRetencao responsavelRetencao;
 
 	private String discriminacao;
+	
+	private String codigoTributacaoMunicipio;
+	
+	private String codigoNbs;
 
 	private Integer codigoMunicipio;
 
@@ -69,8 +73,22 @@ public class DadosServico {
 	public void setResponsavelRetencao(ResponsavelRetencao responsavelRetencao) {
 		this.responsavelRetencao = responsavelRetencao;
 	}
-
 	
+	public String getCodigoTributacaoMunicipio() {
+		return codigoTributacaoMunicipio;
+	}
+
+	public void setCodigoTributacaoMunicipio(String codigoTributacaoMunicipio) {
+		this.codigoTributacaoMunicipio = codigoTributacaoMunicipio;
+	}
+
+	public String getCodigoNbs() {
+		return codigoNbs;
+	}
+
+	public void setCodigoNbs(String codigoNbs) {
+		this.codigoNbs = codigoNbs;
+	}
 
 	public String getDiscriminacao() {
 		return discriminacao;

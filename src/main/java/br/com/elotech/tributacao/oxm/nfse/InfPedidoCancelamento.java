@@ -19,6 +19,8 @@ public class InfPedidoCancelamento {
 
 	private Long numero;
 	
+	private IdentificacaoNfse identificacaoNfse;
+	
 	private String chaveAcesso;
 
 	private CodigoCancelamentoNfse codigoCancelamento;
@@ -27,34 +29,33 @@ public class InfPedidoCancelamento {
 		return numero;
 	}
 
-
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
-
-
 
 	public CodigoCancelamentoNfse getCodigoCancelamento() {
 		return codigoCancelamento;
 	}
 
-
-
 	public String getChaveAcesso() {
 		return chaveAcesso;
 	}
-
 
 	public void setChaveAcesso(String chaveAcesso) {
 		this.chaveAcesso = chaveAcesso;
 	}
 
-
 	public void setCodigoCancelamento(CodigoCancelamentoNfse codigoCancelamento) {
 		this.codigoCancelamento = codigoCancelamento;
 	}
 
+	public IdentificacaoNfse getIdentificacaoNfse() {
+		return identificacaoNfse;
+	}
 
+	public void setIdentificacaoNfse(IdentificacaoNfse identificacaoNfse) {
+		this.identificacaoNfse = identificacaoNfse;
+	}
 
 	@Override
 	public String toString() {

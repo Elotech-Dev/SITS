@@ -13,18 +13,11 @@
  * limitations under the License. 
  */
 
-package br.com.elotech.tributacao.oxm.nfse;
+package br.com.elotech.tributacao.oxm.nfse203;
 
-public abstract class AbstractRespostaMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractSubstituirNfseEnvio;
 
-	private ListaMensagemRetorno listaMensagemRetorno;
+public class SubstituirNfseEnvio extends AbstractSubstituirNfseEnvio{
 
-	public ListaMensagemRetorno getListaMensagemRetorno() {
-		return listaMensagemRetorno;
-	}
-
-	public void setListaMensagemRetorno(ListaMensagemRetorno listaMensagemRetorno) {
-		this.listaMensagemRetorno = listaMensagemRetorno;
-	}
-	
+			
 }

@@ -13,28 +13,35 @@
  * limitations under the License. 
  */
 
-package br.com.elotech.tributacao.oxm.nfse;
 
-public abstract class AbstractEnvioMsg {
+package br.com.elotech.tributacao.oxm.abstractenvioresposta;
 
-	private IdentificacaoRequerente identificacaoRequerente;
+import br.com.elotech.tributacao.oxm.nfse.PedidoCancelamento;
 
-	public IdentificacaoRequerente getIdentificacaoRequerente() {
-		return identificacaoRequerente;
+public abstract class AbstractCancelarNfseEnvio extends AbstractEnvioMsg {
+
+	private PedidoCancelamento pedidoCancelamento;
+
+	public PedidoCancelamento getPedidoCancelamento() {
+		return pedidoCancelamento;
 	}
 
-	public void setIdentificacaoRequerente(
-			IdentificacaoRequerente identificacaoRequerente) {
-		this.identificacaoRequerente = identificacaoRequerente;
+	public void setPedidoCancelamento(PedidoCancelamento pedidoCancelamento) {
+		this.pedidoCancelamento = pedidoCancelamento;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("EnvioMsg [identificacaoRequerente=");
-		builder.append(identificacaoRequerente);
+		builder.append("CancelarNfseEnvio [pedidoCancelamento=");
+		builder.append(pedidoCancelamento);
 		builder.append("]");
-		return builder.toString();
+		return builder.toString() + super.toString();
 	}
-		
+	
+	@Override
+	public String getTipoSolicitacao() {
+		return "CancelarNfseEnvio";
+	}
+
 }

@@ -15,54 +15,9 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class ConsultarLoteRpsResposta extends AbstractRespostaMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractConsultarLoteRpsResposta;
 
-	private SituacaoLoteRps situacao;
-	
-	private ListaNfse listaNfse;
-	
-	private ListaMensagemRetornoLote listaMensagemRetornoLote;
-
-
-	public SituacaoLoteRps getSituacao() {
-		return situacao;
-	}
-
-	public void setSituacao(SituacaoLoteRps situacao) {
-		this.situacao = situacao;
-	}
-
-	public ListaNfse getListaNfse() {
-		return listaNfse;
-	}
-
-	public void setListaNfse(ListaNfse listaNfse) {
-		this.listaNfse = listaNfse;
-	}
-
-	public ListaMensagemRetornoLote getListaMensagemRetornoLote() {
-		return listaMensagemRetornoLote;
-	}
-
-	public void setListaMensagemRetornoLote(
-			ListaMensagemRetornoLote listaMensagemRetornoLote) {
-		this.listaMensagemRetornoLote = listaMensagemRetornoLote;
-	}
-
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("ConsultarLoteRpsResposta [situacao=");
-		builder.append(situacao);
-		builder.append(", listaNfse=");
-		builder.append(listaNfse);
-		builder.append(", listaMensagemRetorno=");
-		builder.append(getListaMensagemRetorno());
-		builder.append(", listaMensagemRetornoLote=");
-		builder.append(listaMensagemRetornoLote);
-		builder.append("]");
-		return builder.toString();
-	}
+public class ConsultarLoteRpsResposta extends AbstractConsultarLoteRpsResposta {
 	
 
 }

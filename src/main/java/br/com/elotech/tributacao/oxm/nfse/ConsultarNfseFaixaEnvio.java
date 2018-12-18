@@ -15,37 +15,15 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class ConsultarNfseFaixaEnvio extends AbstractEnvioMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractConsultarNfseFaixaEnvio;
 
-	private NotaFiscalFaixa notaFiscalFaixa;
 
-	private Integer pagina;
+public class ConsultarNfseFaixaEnvio extends AbstractConsultarNfseFaixaEnvio {
 
-	public NotaFiscalFaixa getNotaFiscalFaixa() {
-		return notaFiscalFaixa;
-	}
-
-	public void setNotaFiscalFaixa(NotaFiscalFaixa notaFiscalFaixa) {
-		this.notaFiscalFaixa = notaFiscalFaixa;
-	}
-
-	public Integer getPagina() {
-		return pagina;
-	}
-
-	public void setPagina(Integer pagina) {
-		this.pagina = pagina;
-	}
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("ConsultarNfseFaixaEnvio [notaFiscalFaixa=");
-		builder.append(notaFiscalFaixa);
-		builder.append(", pagina=");
-		builder.append(pagina);
-		builder.append("]");
-		return builder.toString() + super.toString();
+		return super.toString();
 	}
 
 }

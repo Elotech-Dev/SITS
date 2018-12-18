@@ -18,17 +18,27 @@ package br.com.elotech.tributacao.oxm.nfse;
 public class DadosConstrucaoCivil {
 
 	private String codigoObra;
+	
+	private Long numeroAlvaraConstrucao;
 
 	private String art;
 	
 	private SimNao incorporacao;
-
+	
 	public String getCodigoObra() {
 		return codigoObra;
 	}
 
 	public void setCodigoObra(String codigoObra) {
 		this.codigoObra = codigoObra;
+	}
+	
+	public Long getNumeroAlvaraConstrucao() {
+		return numeroAlvaraConstrucao;
+	}
+
+	public void setNumeroAlvaraConstrucao(Long numeroAlvaraConstrucao) {
+		this.numeroAlvaraConstrucao = numeroAlvaraConstrucao;
 	}
 
 	public String getArt() {
@@ -52,6 +62,8 @@ public class DadosConstrucaoCivil {
 		StringBuilder builder = new StringBuilder();
 		builder.append("DadosConstrucaoCivil [codigoObra=");
 		builder.append(codigoObra);
+		builder.append(", numeroAlvaraConstrucao=");
+		builder.append(numeroAlvaraConstrucao);
 		builder.append(", art=");
 		builder.append(art);
 		builder.append(", incorporacao=");
@@ -59,5 +71,4 @@ public class DadosConstrucaoCivil {
 		builder.append("]");
 		return builder.toString();
 	}
-
 }

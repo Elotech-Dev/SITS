@@ -16,21 +16,29 @@
 package br.com.elotech.tributacao.oxm.nfse;
 
 public class IdentificacaoRequerente {
-
-	private CpfCnpj cpfCnpj;
-
+	
 	private String inscricaoMunicipal;
 
 	private String senha;
 
 	private Boolean homologa;
 
-	public Boolean getHomologa() {
-		return homologa;
+	private CpfCnpj cpfCnpj;
+
+	public CpfCnpj getCpfCnpj() {
+		return cpfCnpj;
 	}
 
-	public void setHomologa(Boolean homologa) {
-		this.homologa = homologa;
+	public void setCpfCnpj(CpfCnpj cpfCnpj) {
+		this.cpfCnpj = cpfCnpj;
+	}
+	
+	public String getInscricaoMunicipal() {
+		return inscricaoMunicipal;
+	}
+
+	public void setInscricaoMunicipal(String inscricaoMunicipal) {
+		this.inscricaoMunicipal = inscricaoMunicipal;
 	}
 
 	public String getSenha() {
@@ -41,20 +49,12 @@ public class IdentificacaoRequerente {
 		this.senha = senha;
 	}
 
-	public CpfCnpj getCpfCnpj() {
-		return cpfCnpj;
+	public Boolean getHomologa() {
+		return homologa;
 	}
 
-	public void setCpfCnpj(CpfCnpj cpfCnpj) {
-		this.cpfCnpj = cpfCnpj;
-	}
-
-	public String getInscricaoMunicipal() {
-		return inscricaoMunicipal;
-	}
-
-	public void setInscricaoMunicipal(String inscricaoMunicipal) {
-		this.inscricaoMunicipal = inscricaoMunicipal;
+	public void setHomologa(Boolean homologa) {
+		this.homologa = homologa;
 	}
 
 	@Override
@@ -63,13 +63,47 @@ public class IdentificacaoRequerente {
 		builder.append("IdentificacaoRequerente [cpfCnpj=");
 		builder.append(cpfCnpj);
 		builder.append(", inscricaoMunicipal=");
-		builder.append(inscricaoMunicipal);
+		builder.append(getInscricaoMunicipal());
 		builder.append(", senha=");
-		builder.append(senha);
+		builder.append(getSenha());
 		builder.append(", homologa=");
-		builder.append(homologa);
+		builder.append(getHomologa());
 		builder.append("]");
 		return builder.toString();
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cpfCnpj == null) ? 0 : cpfCnpj.hashCode());
+		result = prime
+				* result
+				+ ((getInscricaoMunicipal() == null) ? 0 : getInscricaoMunicipal()
+						.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		IdentificacaoRequerente other = (IdentificacaoRequerente) obj;
+		if (cpfCnpj == null) {
+			if (other.cpfCnpj != null)
+				return false;
+		} else if (!cpfCnpj.equals(other.cpfCnpj))
+			return false;
+		if (getInscricaoMunicipal() == null) {
+			if (other.getInscricaoMunicipal() != null)
+				return false;
+		} else if (!getInscricaoMunicipal().equals(other.getInscricaoMunicipal()))
+			return false;
+		return true;
 	}
 
 }

@@ -18,10 +18,16 @@ package br.com.elotech.tributacao.oxm.nfse;
 public class LoteRps {
 
 	private Integer numeroLote;
+	
+	private CpfCnpj cpfCnpj;
+	
+	private String inscricaoMunicipal;
 
 	private Integer quantidadeRps;
 
 	private ListaRps listaRps;
+	
+	private String versao;
 
 	public ListaRps getListaRps() {
 		return listaRps;
@@ -46,7 +52,30 @@ public class LoteRps {
 	public void setQuantidadeRps(Integer quantidadeRps) {
 		this.quantidadeRps = quantidadeRps;
 	}
+	
+	public CpfCnpj getCpfCnpj() {
+		return cpfCnpj;
+	}
 
+	public void setCpfCnpj(CpfCnpj cpfCnpj) {
+		this.cpfCnpj = cpfCnpj;
+	}
+
+	public String getInscricaoMunicipal() {
+		return inscricaoMunicipal;
+	}
+
+	public void setInscricaoMunicipal(String inscricaoMunicipal) {
+		this.inscricaoMunicipal = inscricaoMunicipal;
+	}
+
+	public String getVersao() {
+		return versao;
+	}
+
+	public void setVersao(String versao) {
+		this.versao = versao;
+	}
 
 	@Override
 	public String toString() {

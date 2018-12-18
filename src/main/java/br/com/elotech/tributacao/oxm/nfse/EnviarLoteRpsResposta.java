@@ -15,42 +15,9 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-import java.util.Date;
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractEnviarLoteRpsResposta;
 
-public class EnviarLoteRpsResposta extends AbstractRespostaMsg {
+public class EnviarLoteRpsResposta extends AbstractEnviarLoteRpsResposta {
 
-	private Integer numeroLote;
-
-	private Date dataRecebimento;
-
-	public Integer getNumeroLote() {
-		return numeroLote;
-	}
-
-	public void setNumeroLote(Integer numeroLote) {
-		this.numeroLote = numeroLote;
-	}
-
-	public Date getDataRecebimento() {
-		return dataRecebimento;
-	}
-
-	public void setDataRecebimento(Date dataRecebimento) {
-		this.dataRecebimento = dataRecebimento;
-	}
-
-
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("EnviarLoteRpsResposta [numeroLote=");
-		builder.append(numeroLote);
-		builder.append(", dataRecebimento=");
-		builder.append(dataRecebimento);
-		builder.append(", listaMensagemRetorno=");
-		builder.append(getListaMensagemRetorno());
-		builder.append("]");
-		return builder.toString();
-	}
 
 }

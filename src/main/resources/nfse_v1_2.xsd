@@ -298,7 +298,7 @@
 	</xsd:simpleType>
 	<xsd:simpleType name="tsSituacaoLoteRps">
 		<xsd:restriction base="xsd:byte">
-			<xsd:pattern value="1|2|3" />
+			<xsd:pattern value="1|2|3|4" />
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="tsQuantidadeRps">

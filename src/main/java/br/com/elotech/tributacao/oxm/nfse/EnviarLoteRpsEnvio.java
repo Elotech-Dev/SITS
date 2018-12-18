@@ -15,24 +15,9 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class EnviarLoteRpsEnvio extends AbstractEnvioMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractEnviarLoteRpsEnvio;
 
-	private LoteRps loteRps;
+public class EnviarLoteRpsEnvio extends AbstractEnviarLoteRpsEnvio {
 
-	public LoteRps getLoteRps() {
-		return loteRps;
-	}
-
-	public void setLoteRps(LoteRps loteRps) {
-		this.loteRps = loteRps;
-	}
-
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("EnviarLoteRpsEnvio [loteRps=");
-		builder.append(loteRps);
-		builder.append("]");
-		return builder.toString()+super.toString();
-	}
+	
 }

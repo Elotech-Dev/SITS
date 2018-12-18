@@ -15,81 +15,15 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class ConsultarNfseServicoTomadoEnvio extends AbstractEnvioMsg {
-
-	
-	private Integer numeroNfse;
-	
-	private PeriodoData periodoEmissao;
-	
-	private IdentificacaoPrestador identificacaoPrestador;
-		
-	private IdentificacaoIntermediario identificacaoIntermediario;
-	
-	private Integer pagina;
-
-	
-	public Integer getNumeroNfse() {
-		return numeroNfse;
-	}
-
-	public void setNumeroNfse(Integer numeroNfse) {
-		this.numeroNfse = numeroNfse;
-	}
-
-	public PeriodoData getPeriodoEmissao() {
-		return periodoEmissao;
-	}
-
-	public void setPeriodoEmissao(PeriodoData periodoEmissao) {
-		this.periodoEmissao = periodoEmissao;
-	}
-
-	
-
-	public IdentificacaoPrestador getIdentificacaoPrestador() {
-		return identificacaoPrestador;
-	}
-
-	public void setIdentificacaoPrestador(
-			IdentificacaoPrestador identificacaoPrestador) {
-		this.identificacaoPrestador = identificacaoPrestador;
-	}
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractConsultarNfseServicoTomadoEnvio;
 
 
+public class ConsultarNfseServicoTomadoEnvio extends AbstractConsultarNfseServicoTomadoEnvio {
 
-	public IdentificacaoIntermediario getIdentificacaoIntermediario() {
-		return identificacaoIntermediario;
-	}
-
-	public void setIdentificacaoIntermediario(
-			IdentificacaoIntermediario identificacaoIntermediario) {
-		this.identificacaoIntermediario = identificacaoIntermediario;
-	}
-
-	public Integer getPagina() {
-		return pagina;
-	}
-
-	public void setPagina(Integer pagina) {
-		this.pagina = pagina;
-	}
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("ConsultarNfseServicoTomadoEnvio [numeroNfse=");
-		builder.append(numeroNfse);
-		builder.append(", periodoEmissao=");
-		builder.append(periodoEmissao);
-		builder.append(", identificacaoPrestador=");
-		builder.append(identificacaoPrestador);
-		builder.append(", identificacaoIntermediario=");
-		builder.append(identificacaoIntermediario);
-		builder.append(", pagina=");
-		builder.append(pagina);
-		builder.append("]");
-		return builder.toString()+super.toString();
+		return super.toString();
 	}
 	
 }

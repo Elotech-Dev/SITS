@@ -15,6 +15,8 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractRespostaMsg;
+
 public class NfseSubstituida extends AbstractRespostaMsg {
 
 	private CompNfse compNfse;

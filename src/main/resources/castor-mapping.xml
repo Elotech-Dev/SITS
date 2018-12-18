@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Object Mapping DTD Version 1.0//EN"
                          "mapping.dtd">
-
+						 
 <!-- 
  
   Copyright 2016 ELOTECH GESTAO PUBLICA LTDA
@@ -17,8 +17,8 @@
   See the License for the specific language governing permissions and
   limitations under the License. 
  
- -->
-
+ -->						 
+						 
 <mapping>
 
 
@@ -193,9 +193,6 @@
 
 	</class>
 
-
-
-
 	<class name="br.com.elotech.tributacao.oxm.nfse.IdentificacaoPrestador">
 
 		<map-to xml="IdentificacaoPrestador"
@@ -228,9 +225,6 @@
 
 	</class>
 
-
-
-
 	<class name="br.com.elotech.tributacao.oxm.nfse.ListaMensagemAlertaRetorno">
 
 		<map-to xml="ListaMensagemAlertaRetorno"
@@ -242,8 +236,6 @@
 		</field>
 
 	</class>
-
-
 
 	<class name="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRps">
 
@@ -329,9 +321,6 @@
 
 	</class>
 
-
-
-
 	<class name="br.com.elotech.tributacao.oxm.nfse.Endereco">
 
 		<map-to xml="Endereco"
@@ -373,9 +362,7 @@
 			<bind-xml name="Cep" node="element" />
 		</field>
 
-
 	</class>
-
 
 	<class name="br.com.elotech.tributacao.oxm.nfse.IdentificacaoOrgaoGerador">
 
@@ -391,7 +378,6 @@
 		</field>
 
 	</class>
-
 
 	<class name="br.com.elotech.tributacao.oxm.nfse.InfRps">
 
@@ -528,7 +514,7 @@
 			<bind-xml name="ItemListaServico" node="element" />
 		</field>
 
-		<field name="codigoCnae" type="integer">
+		<field name="codigoCnae" type="string">
 			<bind-xml name="CodigoCnae" node="element" />
 		</field>
 
@@ -1499,6 +1485,5 @@
 		</field>
 
 	</class>
-
-
+	
 </mapping>

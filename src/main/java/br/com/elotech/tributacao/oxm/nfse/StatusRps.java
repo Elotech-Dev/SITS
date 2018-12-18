@@ -59,7 +59,7 @@ public enum StatusRps implements CastorEnumDef<StatusRps> {
 		}
 		if (this == StatusRps.NORMAL) {
 
-			return 0l;
+			return 0L;
 		}
 
 		return null;

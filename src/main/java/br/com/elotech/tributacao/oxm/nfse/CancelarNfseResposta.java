@@ -15,28 +15,13 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class CancelarNfseResposta extends AbstractRespostaMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractCancelarNfseResposta;
 
-	private RetCancelamento retCancelamento;
-
-	public RetCancelamento getRetCancelamento() {
-		return retCancelamento;
-	}
-
-	public void setRetCancelamento(RetCancelamento retCancelamento) {
-		this.retCancelamento = retCancelamento;
-	}
-
+public class CancelarNfseResposta extends AbstractCancelarNfseResposta {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("CancelarNfseResposta [retCancelamento=");
-		builder.append(retCancelamento);
-		builder.append(", listaMensagemRetorno=");
-		builder.append(getListaMensagemRetorno());
-		builder.append("]");
-		return builder.toString();
+		return super.toString();
 	}
 
 }

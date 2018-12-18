@@ -15,25 +15,9 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class ConsultarLoteRpsEnvio extends AbstractEnvioMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractConsultarLoteRpsEnvio;
 
-	private Integer numeroLote;
-
-	public Integer getNumeroLote() {
-		return numeroLote;
-	}
-
-	public void setNumeroLote(Integer numeroLote) {
-		this.numeroLote = numeroLote;
-	}
-
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("ConsultarLoteRpsEnvio [numeroLote=");
-		builder.append(numeroLote);
-		builder.append("]");
-		return builder.toString()+ super.toString();
-	}
+public class ConsultarLoteRpsEnvio extends AbstractConsultarLoteRpsEnvio
+		implements SolicitacaoLote {
 
 }

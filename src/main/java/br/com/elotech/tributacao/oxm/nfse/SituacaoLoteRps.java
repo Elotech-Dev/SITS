@@ -17,17 +17,9 @@ package br.com.elotech.tributacao.oxm.nfse;
 
 import br.com.elotech.tributacao.castor.CastorEnumDef;
 
-/*
- 1 Não Processado
- 2 Processado com Erro
- 3 Processado com Sucesso
-
- */
-
 public enum SituacaoLoteRps implements CastorEnumDef<SituacaoLoteRps> {
 
-
-	NAO_PROCESSADO("1"), PROCESSADO_ERRO("2"), PROCESSADO_SUCESSO("3");
+	NAO_RECEBIDO("1"), NAO_PROCESSADO("2"), PROCESSADO_ERRO("3"), PROCESSADO_SUCESSO("4");
 
 	private final String valor;
 

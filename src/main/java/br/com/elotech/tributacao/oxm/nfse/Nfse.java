@@ -18,6 +18,8 @@ package br.com.elotech.tributacao.oxm.nfse;
 public class Nfse {
 
 	private InfNfse infNfse;
+	
+	private String versao;
 
 	public InfNfse getInfNfse() {
 		return infNfse;
@@ -25,6 +27,14 @@ public class Nfse {
 
 	public void setInfNfse(InfNfse infNfse) {
 		this.infNfse = infNfse;
+	}
+	
+	public String getVersao() {
+		return versao;
+	}
+
+	public void setVersao(String versao) {
+		this.versao = versao;
 	}
 
 	@Override

@@ -16,31 +16,34 @@
 package br.com.elotech.sits.service;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
-import org.springframework.oxm.XmlMappingException;
+import org.springframework.ws.client.core.WebServiceTemplate;
+import org.w3c.dom.Node;
 
 class ElotechService extends AbstractService {
 
 	@Override
-	public void send() throws XmlMappingException, IOException {
+	public void send() throws Exception {
 
 		List<File> files = getFilesToSend();
 
 		for (File file : files) {
+			
+			Node node = getXSDNotaFiscal(file);
 
-			Object objectToSend = getObjectsToSend(file);
+			Object objectToSend = getObjectsToSend(file, node);
+			
+			WebServiceTemplate webServiceTemplateByXSD = getWebServiceTemplateByXSD(node);
 
-			Object received = getWebServiceTemplate().marshalSendAndReceive(
-					objectToSend);
+			Object received = webServiceTemplateByXSD.marshalSendAndReceive(objectToSend);
 			
 			moveToSent(file);
 					
-			writeReceived(getFileToWriteResponse(file), received);
+			writeReceived(getFileToWriteResponse(file), received, node);
 
 		}
 
 	}
-
+	
 }

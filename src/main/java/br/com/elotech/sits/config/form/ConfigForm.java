@@ -39,6 +39,8 @@ import br.com.elotech.sits.keyinfo.PKCS12KeyInfo;
 
 public abstract class ConfigForm extends Form implements ActionListener {
 
+	private static final String CONFIG_FILE = System.getenv("SITS_HOME") + File.separator + "client.properties";
+
 	/**
 	 * 
 	 */
@@ -86,7 +88,7 @@ public abstract class ConfigForm extends Form implements ActionListener {
 
 		try {
 
-			File configFile = new File("client.properties");
+			File configFile = new File(CONFIG_FILE);
 
 			if (!configFile.exists()) {
 				configFile.createNewFile();
@@ -171,7 +173,7 @@ public abstract class ConfigForm extends Form implements ActionListener {
 
 			saveKeyAlias(config);
 
-			config.store(new FileOutputStream(new File("client.properties")),
+			config.store(new FileOutputStream(new File(CONFIG_FILE)),
 					"Arquivo gerado pelo configurador");
 
 			close();

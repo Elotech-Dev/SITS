@@ -15,24 +15,15 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class CancelarNfseEnvio extends AbstractEnvioMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractCancelarNfseEnvio;
 
-	private PedidoCancelamento pedidoCancelamento;
 
-	public PedidoCancelamento getPedidoCancelamento() {
-		return pedidoCancelamento;
-	}
-
-	public void setPedidoCancelamento(PedidoCancelamento pedidoCancelamento) {
-		this.pedidoCancelamento = pedidoCancelamento;
-	}
+public class CancelarNfseEnvio extends AbstractCancelarNfseEnvio {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("CancelarNfseEnvio [pedidoCancelamento=");
-		builder.append(pedidoCancelamento);
-		builder.append("]");
-		return builder.toString() + super.toString();
+		return super.toString();
 	}
+	
+	
 }

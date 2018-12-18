@@ -32,7 +32,7 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 
 		<property name="location">
-			<value>file:client.properties</value>
+			<value>file:${SITS_HOME}${file.separator}client.properties</value>
 		</property>
 	</bean>
 
@@ -50,11 +50,34 @@
 		<property name="unmarshaller" ref="castorMarshaller" />
 
 	</bean>
+	
+	<bean id="webServiceVersao203Template" class="org.springframework.ws.client.core.WebServiceTemplate">
+		<property name="defaultUri"
+			value="${ISS.url}" />
+			
+		<property name="interceptors">
+			<list>
+				<ref local="wsClientSecurityInterceptor" />  
+				<ref local="payloadValidatingInterceptorVersao203" />
+			</list>
+		</property>
+		<property name="marshaller" ref="castorMarshallerNfse203" />
+		<property name="unmarshaller" ref="castorMarshallerNfse203" />
+
+	</bean>
 
 	<bean id="payloadValidatingInterceptor"
 		class="org.springframework.ws.client.support.interceptor.PayloadValidatingInterceptor">
 		<property name="schema"
 			value="classpath:nfse_v1_2.xsd" />
+		<property name="validateRequest" value="true" />
+		<property name="validateResponse" value="true" />
+	</bean>
+	
+	<bean id="payloadValidatingInterceptorVersao203"
+		class="org.springframework.ws.client.support.interceptor.PayloadValidatingInterceptor">
+		<property name="schema"
+			value="classpath:nfse_v2_03.xsd" />
 		<property name="validateRequest" value="true" />
 		<property name="validateResponse" value="true" />
 	</bean>
@@ -83,6 +106,9 @@
 
 	<bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller"
 		p:mappingLocation="classpath:castor-mapping.xml" />
+		
+	<bean id="castorMarshallerNfse203" class="org.springframework.oxm.castor.CastorMarshaller"
+		p:mappingLocation="classpath:castor-wsnfse203-mapping.xml" />
 		
 	<bean id="dirToSend" class="java.lang.String">
 		<constructor-arg type="java.lang.String" value="${ISS.dirToSend}"/>

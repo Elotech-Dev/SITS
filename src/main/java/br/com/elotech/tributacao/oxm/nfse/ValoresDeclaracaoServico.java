@@ -23,17 +23,49 @@ public class ValoresDeclaracaoServico {
 
 	private BigDecimal valorDeducoes;
 
+	private BigDecimal aliquotaPis;
+
+	private SimNao retidoPis;
+
 	private BigDecimal valorPis;
+
+	private BigDecimal aliquotaCofins;
+
+	private SimNao retidoCofins;
 
 	private BigDecimal valorCofins;
 
+	private BigDecimal aliquotaInss;
+
+	private SimNao retidoInss;
+
 	private BigDecimal valorInss;
+
+	private BigDecimal aliquotaIr;
+
+	private SimNao retidoIr;
 
 	private BigDecimal valorIr;
 
+	private BigDecimal aliquotaCsll;
+
+	private SimNao retidoCsll;
+
 	private BigDecimal valorCsll;
 
+	private BigDecimal aliquotaCpp;
+
+	private SimNao retidoCpp;
+
+	private BigDecimal valorCpp;
+
 	private BigDecimal outrasRetencoes;
+
+	private SimNao retidoOutrasRetencoes;
+
+	private BigDecimal aliquotaTotTributos;
+
+	private BigDecimal valorTotTributos;
 
 	private BigDecimal valorIss;
 
@@ -59,12 +91,44 @@ public class ValoresDeclaracaoServico {
 		this.valorDeducoes = valorDeducoes;
 	}
 
+	public BigDecimal getAliquotaPis() {
+		return aliquotaPis;
+	}
+
+	public void setAliquotaPis(BigDecimal aliquotaPis) {
+		this.aliquotaPis = aliquotaPis;
+	}
+
+	public SimNao getRetidoPis() {
+		return retidoPis;
+	}
+
+	public void setRetidoPis(SimNao retidoPis) {
+		this.retidoPis = retidoPis;
+	}
+
 	public BigDecimal getValorPis() {
 		return valorPis;
 	}
 
 	public void setValorPis(BigDecimal valorPis) {
 		this.valorPis = valorPis;
+	}
+
+	public BigDecimal getAliquotaCofins() {
+		return aliquotaCofins;
+	}
+
+	public void setAliquotaCofins(BigDecimal aliquotaCofins) {
+		this.aliquotaCofins = aliquotaCofins;
+	}
+
+	public SimNao getRetidoCofins() {
+		return retidoCofins;
+	}
+
+	public void setRetidoCofins(SimNao retidoCofins) {
+		this.retidoCofins = retidoCofins;
 	}
 
 	public BigDecimal getValorCofins() {
@@ -75,12 +139,44 @@ public class ValoresDeclaracaoServico {
 		this.valorCofins = valorCofins;
 	}
 
+	public BigDecimal getAliquotaInss() {
+		return aliquotaInss;
+	}
+
+	public void setAliquotaInss(BigDecimal aliquotaInss) {
+		this.aliquotaInss = aliquotaInss;
+	}
+
+	public SimNao getRetidoInss() {
+		return retidoInss;
+	}
+
+	public void setRetidoInss(SimNao retidoInss) {
+		this.retidoInss = retidoInss;
+	}
+
 	public BigDecimal getValorInss() {
 		return valorInss;
 	}
 
 	public void setValorInss(BigDecimal valorInss) {
 		this.valorInss = valorInss;
+	}
+
+	public BigDecimal getAliquotaIr() {
+		return aliquotaIr;
+	}
+
+	public void setAliquotaIr(BigDecimal aliquotaIr) {
+		this.aliquotaIr = aliquotaIr;
+	}
+
+	public SimNao getRetidoIr() {
+		return retidoIr;
+	}
+
+	public void setRetidoIr(SimNao retidoIr) {
+		this.retidoIr = retidoIr;
 	}
 
 	public BigDecimal getValorIr() {
@@ -91,6 +187,22 @@ public class ValoresDeclaracaoServico {
 		this.valorIr = valorIr;
 	}
 
+	public BigDecimal getAliquotaCsll() {
+		return aliquotaCsll;
+	}
+
+	public void setAliquotaCsll(BigDecimal aliquotaCsll) {
+		this.aliquotaCsll = aliquotaCsll;
+	}
+
+	public SimNao getRetidoCsll() {
+		return retidoCsll;
+	}
+
+	public void setRetidoCsll(SimNao retidoCsll) {
+		this.retidoCsll = retidoCsll;
+	}
+
 	public BigDecimal getValorCsll() {
 		return valorCsll;
 	}
@@ -99,12 +211,60 @@ public class ValoresDeclaracaoServico {
 		this.valorCsll = valorCsll;
 	}
 
+	public BigDecimal getAliquotaCpp() {
+		return aliquotaCpp;
+	}
+
+	public void setAliquotaCpp(BigDecimal aliquotaCpp) {
+		this.aliquotaCpp = aliquotaCpp;
+	}
+
+	public SimNao getRetidoCpp() {
+		return retidoCpp;
+	}
+
+	public void setRetidoCpp(SimNao retidoCpp) {
+		this.retidoCpp = retidoCpp;
+	}
+
+	public BigDecimal getValorCpp() {
+		return valorCpp;
+	}
+
+	public void setValorCpp(BigDecimal valorCpp) {
+		this.valorCpp = valorCpp;
+	}
+
 	public BigDecimal getOutrasRetencoes() {
 		return outrasRetencoes;
 	}
 
 	public void setOutrasRetencoes(BigDecimal outrasRetencoes) {
 		this.outrasRetencoes = outrasRetencoes;
+	}
+
+	public SimNao getRetidoOutrasRetencoes() {
+		return retidoOutrasRetencoes;
+	}
+
+	public void setRetidoOutrasRetencoes(SimNao retidoOutrasRetencoes) {
+		this.retidoOutrasRetencoes = retidoOutrasRetencoes;
+	}
+
+	public BigDecimal getAliquotaTotTributos() {
+		return aliquotaTotTributos;
+	}
+
+	public void setAliquotaTotTributos(BigDecimal aliquotaTotTributos) {
+		this.aliquotaTotTributos = aliquotaTotTributos;
+	}
+
+	public BigDecimal getValorTotTributos() {
+		return valorTotTributos;
+	}
+
+	public void setValorTotTributos(BigDecimal valorTotTributos) {
+		this.valorTotTributos = valorTotTributos;
 	}
 
 	public BigDecimal getValorIss() {
@@ -169,5 +329,4 @@ public class ValoresDeclaracaoServico {
 		builder.append("]");
 		return builder.toString();
 	}
-
 }

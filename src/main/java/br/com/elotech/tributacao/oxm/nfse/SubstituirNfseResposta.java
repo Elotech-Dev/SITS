@@ -15,33 +15,9 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class SubstituirNfseResposta extends AbstractRespostaMsg {
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractSubstituirNfseResposta;
 
-	
-	
-	private RetSubstituicao retSubstituicao;
-	
-
-	public RetSubstituicao getRetSubstituicao() {
-		return retSubstituicao;
-	}
-
-	public void setRetSubstituicao(RetSubstituicao retSubstituicao) {
-		this.retSubstituicao = retSubstituicao;
-	}
-
-
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("SubstituirNfseResposta [retSubstituicao=");
-		builder.append(retSubstituicao);
-		builder.append(", listaMensagemRetorno=");
-		builder.append(getListaMensagemRetorno());
-		builder.append("]");
-		return builder.toString();
-	}
-	
+public class SubstituirNfseResposta extends AbstractSubstituirNfseResposta {
 	
 	
 }

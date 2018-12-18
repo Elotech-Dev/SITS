@@ -15,67 +15,8 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-import java.util.Date;
+import br.com.elotech.tributacao.oxm.abstractenvioresposta.AbstractEnviarLoteRpsSincronoResposta;
 
-public class EnviarLoteRpsSincronoResposta extends AbstractRespostaMsg {
-
-	private Integer numeroLote;
-
-	private Date dataRecebimento;
-	
-	private ListaNfse listaNfse;
-		
-	private ListaMensagemRetornoLote listaMensagemRetornoLote;
-	
-	
-	public ListaNfse getListaNfse() {
-		return listaNfse;
-	}
-
-	public void setListaNfse(ListaNfse listaNfse) {
-		this.listaNfse = listaNfse;
-	}
-
-	public ListaMensagemRetornoLote getListaMensagemRetornoLote() {
-		return listaMensagemRetornoLote;
-	}
-
-	public void setListaMensagemRetornoLote(
-			ListaMensagemRetornoLote listaMensagemRetornoLote) {
-		this.listaMensagemRetornoLote = listaMensagemRetornoLote;
-	}
-
-	public Integer getNumeroLote() {
-		return numeroLote;
-	}
-
-	public void setNumeroLote(Integer numeroLote) {
-		this.numeroLote = numeroLote;
-	}
-
-	public Date getDataRecebimento() {
-		return dataRecebimento;
-	}
-
-	public void setDataRecebimento(Date dataRecebimento) {
-		this.dataRecebimento = dataRecebimento;
-	}
-
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("EnviarLoteRpsSincronoResposta [numeroLote=");
-		builder.append(numeroLote);
-		builder.append(", dataRecebimento=");
-		builder.append(dataRecebimento);
-		builder.append(", listaNfse=");
-		builder.append(listaNfse);
-		builder.append(", listaMensagemRetorno=");
-		builder.append(getListaMensagemRetorno());
-		builder.append(", listaMensagemRetornoLote=");
-		builder.append(listaMensagemRetornoLote);
-		builder.append("]");
-		return builder.toString();
-	}
+public class EnviarLoteRpsSincronoResposta extends AbstractEnviarLoteRpsSincronoResposta {
 
 }

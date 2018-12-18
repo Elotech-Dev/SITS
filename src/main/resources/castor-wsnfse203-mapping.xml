@@ -1,0 +1,1679 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Object Mapping DTD Version 1.0//EN"
+                         "mapping.dtd">
+                         
+<!-- 
+ 
+  Copyright 2016 ELOTECH GESTAO PUBLICA LTDA
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+      http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. 
+ 
+ -->	                         
+                         
+<mapping>
+
+
+
+	<description>Mapeamento Nfse</description>
+
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.CpfCnpj">
+
+		<map-to xml="CpfCnpj"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="cpf" type="string">
+			<bind-xml name="Cpf" node="element" />
+		</field>
+
+		<field name="cnpj" type="string">
+			<bind-xml name="Cnpj" node="element" />
+		</field>
+
+	</class>
+	
+	<class name="br.com.elotech.tributacao.oxm.nfse.IdentificacaoNfse">
+
+		<map-to xml="IdentificacaoNfse"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="numero" type="long">
+			<bind-xml name="Numero" node="element" />
+		</field>
+
+		<field name="cpfCnpj" type="br.com.elotech.tributacao.oxm.nfse.CpfCnpj">
+			<bind-xml name="CpfCnpj" node="element" />
+		</field>
+		
+		<field name="inscricaoMunicipal" type="string">
+			<bind-xml name="InscricaoMunicipal" node="element" />
+		</field>
+
+		<field name="codigoMunicipio" type="long">
+			<bind-xml name="CodigoMunicipio" node="element" />
+		</field>
+		
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.InfPedidoCancelamento">
+
+		<map-to xml="InfPedidoCancelamento"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoNfse"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoNfse">
+			<bind-xml name="IdentificacaoNfse" />
+		</field>
+
+		<field name="chaveAcesso" type="string">
+			<bind-xml name="ChaveAcesso" node="element" />
+		</field>
+
+		<field name="codigoCancelamento" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorEnumHandlerCodigoCancelamentoNfse">
+			<bind-xml name="CodigoCancelamento" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.PedidoCancelamento">
+
+		<map-to xml="Pedido"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="infPedidoCancelamento"
+			type="br.com.elotech.tributacao.oxm.nfse.InfPedidoCancelamento">
+			<bind-xml name="InfPedidoCancelamento" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.CancelarNfseEnvio">
+
+		<map-to xml="CancelarNfseEnvio"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoRequerente"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRequerente">
+			<bind-xml name="IdentificacaoRequerente" />
+		</field>
+		
+		<field name="pedidoCancelamento"
+			type="br.com.elotech.tributacao.oxm.nfse.PedidoCancelamento">
+			<bind-xml name="Pedido" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.ConfirmacaoCancelamento">
+
+		<map-to xml="ConfirmacaoCancelamento"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="pedidoCancelamento"
+			type="br.com.elotech.tributacao.oxm.nfse.PedidoCancelamento">
+			<bind-xml name="Pedido" />
+		</field>
+
+		<field name="dataHora" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorDateTimeHandler">
+			<bind-xml name="DataHora" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.CancelamentoNfse">
+
+		<map-to xml="NfseCancelamento"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="confirmacaoCancelamento"
+			type="br.com.elotech.tributacao.oxm.nfse.ConfirmacaoCancelamento">
+			<bind-xml name="ConfirmacaoCancelamento" />
+		</field>
+
+		<field name="versao" type="string">
+			<bind-xml name="versao" node="attribute" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.RetCancelamento">
+
+		<map-to xml="tcRetCancelamento"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+			
+		<field name="cancelamentoNfse"
+			type="br.com.elotech.tributacao.oxm.nfse.CancelamentoNfse">
+			<bind-xml name="NfseCancelamento" />
+		</field>
+
+	</class>
+	
+	<class name="br.com.elotech.tributacao.oxm.nfse203.MensagemRetorno">
+
+		<map-to xml="MensagemRetorno"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v1_2.xsd" />
+
+		<field name="identificacaoRps"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRps">
+			<bind-xml name="IdentificacaoRps" />
+		</field>
+
+		<field name="codigo" type="string">
+			<bind-xml name="Codigo" node="element" />
+		</field>
+
+		<field name="mensagem" type="string">
+			<bind-xml name="Mensagem" node="element" />
+		</field>
+
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.MensagemRetorno">
+
+		<map-to xml="MensagemRetorno"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="codigo" type="string">
+			<bind-xml name="Codigo" node="element" />
+		</field>
+
+		<field name="mensagem" type="string">
+			<bind-xml name="Mensagem" node="element" />
+		</field>
+
+		<field name="correcao" type="string">
+			<bind-xml name="Correcao" node="element" />
+		</field>
+
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetorno">
+
+		<map-to xml="ListaMensagemRetorno"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="listMensagemRetorno" type="br.com.elotech.tributacao.oxm.nfse.MensagemRetorno"
+			collection="arraylist">
+			<bind-xml name="MensagemRetorno" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.CancelarNfseResposta">
+
+		<map-to xml="CancelarNfseResposta"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="retCancelamento" type="br.com.elotech.tributacao.oxm.nfse.RetCancelamento">
+			<bind-xml name="tcRetCancelamento" />
+		</field>
+
+		<field name="listaMensagemRetorno"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetorno">
+			<bind-xml name="ListaMensagemRetorno" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.IdentificacaoPrestador">
+
+		<map-to xml="IdentificacaoPrestador"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="cpfCnpj" type="br.com.elotech.tributacao.oxm.nfse.CpfCnpj">
+			<bind-xml name="CpfCnpj" node="element" />
+		</field>
+
+		<field name="inscricaoMunicipal" type="string">
+			<bind-xml name="InscricaoMunicipal" node="element" />
+		</field>
+
+	</class>
+	
+	<class name="br.com.elotech.tributacao.oxm.nfse203.Prestador">
+
+		<map-to xml="Prestador"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="cpfCnpj" type="br.com.elotech.tributacao.oxm.nfse.CpfCnpj">
+			<bind-xml name="CpfCnpj" node="element" />
+		</field>
+
+		<field name="inscricaoMunicipal" type="string">
+			<bind-xml name="InscricaoMunicipal" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.ConsultarLoteRpsEnvio">
+
+		<map-to xml="ConsultarLoteRpsEnvio"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+
+		<field name="identificacaoRequerente"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRequerente">
+			<bind-xml name="IdentificacaoRequerente" />
+		</field>
+
+		<field name="numeroLote" type="integer">
+			<bind-xml name="NumeroLote" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.ListaMensagemAlertaRetorno">
+
+		<map-to xml="ListaMensagemAlertaRetorno"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="listMensagemRetorno" type="br.com.elotech.tributacao.oxm.nfse.MensagemRetorno"
+			collection="arraylist">
+			<bind-xml name="MensagemRetorno" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRps">
+
+		<map-to xml="IdentificacaoRps"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="numero" type="integer">
+			<bind-xml name="Numero" node="element" />
+		</field>
+
+		<field name="serie" type="string">
+			<bind-xml name="Serie" node="element" />
+		</field>
+
+		<field name="tipo" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorEnumHandlerTipoRps">
+			<bind-xml name="Tipo" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.MensagemRetornoLote">
+
+		<map-to xml="MensagemRetornoLote"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoRps"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRps">
+			<bind-xml name="IdentificacaoRps" />
+		</field>
+
+
+		<field name="codigo" type="string">
+			<bind-xml name="Codigo" node="element" />
+		</field>
+
+		<field name="mensagem" type="string">
+			<bind-xml name="Mensagem" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetornoLote">
+
+		<map-to xml="ListaMensagemRetornoLote"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="listMensagemRetornoLote"
+			type="br.com.elotech.tributacao.oxm.nfse203.MensagemRetorno"
+			collection="arraylist">
+			<bind-xml name="MensagemRetorno" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.ValoresNfse">
+
+		<map-to xml="ValoresNfse"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+
+		<field name="baseCalculo" type="big-decimal">
+			<bind-xml name="BaseCalculo" node="element" />
+		</field>
+
+		<field name="aliquota" type="big-decimal">
+			<bind-xml name="Aliquota" node="element" />
+		</field>
+
+		<field name="valorIss" type="big-decimal">
+			<bind-xml name="ValorIss" node="element" />
+		</field>
+
+		<field name="valorLiquidoNfse" type="big-decimal">
+			<bind-xml name="ValorLiquidoNfse" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.Endereco">
+
+		<map-to xml="Endereco"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="endereco" type="string">
+			<bind-xml name="Endereco" node="element" />
+		</field>
+
+		<field name="numero" type="string">
+			<bind-xml name="Numero" node="element" />
+		</field>
+
+		<field name="complemento" type="string">
+			<bind-xml name="Complemento" node="element" />
+		</field>
+
+		<field name="bairro" type="string">
+			<bind-xml name="Bairro" node="element" />
+		</field>
+
+		<field name="codigoMunicipio" type="integer">
+			<bind-xml name="CodigoMunicipio" node="element" />
+		</field>
+
+		<field name="uf" type="string">
+			<bind-xml name="Uf" node="element" />
+		</field>
+
+		<field name="codigoPais" type="string">
+			<bind-xml name="CodigoPais" node="element" />
+		</field>
+
+		<field name="cep" type="string">
+			<bind-xml name="Cep" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.IdentificacaoOrgaoGerador">
+
+		<map-to xml="OrgaoGerador"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="codigoMunicipio" type="integer">
+			<bind-xml name="CodigoMunicipio" node="element" />
+		</field>
+
+		<field name="uf" type="string">
+			<bind-xml name="Uf" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.InfRps">
+
+		<map-to xml="Rps"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoRps"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRps">
+			<bind-xml name="IdentificacaoRps" />
+		</field>
+
+		<field name="dataEmissao" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorDateHandler">
+			<bind-xml name="DataEmissao" node="element" />
+		</field>
+
+		<field name="status"
+			handler="br.com.elotech.tributacao.castor.CastorEnumHandlerStatusRps"
+			type="string">
+			<bind-xml name="Status" />
+		</field>
+
+		<field name="rpsSubstituido"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRps">
+			<bind-xml name="RpsSubstituido" />
+		</field>
+
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.ValoresDeclaracaoServico">
+
+		<map-to xml="Valores"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="valorServicos" type="big-decimal">
+			<bind-xml name="ValorServicos" node="element" />
+		</field>
+
+		<field name="valorDeducoes" type="big-decimal">
+			<bind-xml name="ValorDeducoes" node="element" />
+		</field>
+		
+		<field name="aliquotaPis" type="big-decimal">
+			<bind-xml name="AliquotaPis" node="element" />
+		</field>
+		
+		<field name="retidoPis" type="string" 
+				handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSimNao">
+			<bind-xml name="RetidoPis" node="element" />
+		</field>
+		
+		<field name="valorPis" type="big-decimal">
+			<bind-xml name="ValorPis" node="element" />
+		</field>
+		
+		<field name="aliquotaCofins" type="big-decimal">
+			<bind-xml name="AliquotaCofins" node="element" />
+		</field>
+		
+		<field name="retidoCofins" type="string" 
+				handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSimNao">
+			<bind-xml name="RetidoCofins" node="element" />
+		</field>
+
+		<field name="valorCofins" type="big-decimal"   >
+			<bind-xml name="ValorCofins" node="element"   />
+		</field>
+		
+		<field name="aliquotaInss" type="big-decimal">
+			<bind-xml name="AliquotaInss" node="element" />
+		</field>
+		
+		<field name="retidoInss" type="string" 
+				handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSimNao">
+			<bind-xml name="RetidoInss" node="element" />
+		</field>
+
+		<field name="valorInss" type="big-decimal">
+			<bind-xml name="ValorInss" node="element" />
+		</field>
+		
+		<field name="aliquotaIr" type="big-decimal">
+			<bind-xml name="AliquotaIr" node="element" />
+		</field>
+		
+		<field name="retidoIr" type="string" 
+				handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSimNao">
+			<bind-xml name="RetidoIr" node="element" />
+		</field>
+
+		<field name="valorIr" type="big-decimal">
+			<bind-xml name="ValorIr" node="element" />
+		</field>
+		
+		<field name="aliquotaCsll" type="big-decimal">
+			<bind-xml name="AliquotaCsll" node="element" />
+		</field>
+		
+		<field name="retidoCsll" type="string" 
+				handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSimNao">
+			<bind-xml name="RetidoCsll" node="element" />
+		</field>
+		
+		<field name="valorCsll" type="big-decimal">
+			<bind-xml name="ValorCsll" node="element" />
+		</field>
+		
+		<field name="aliquotaCpp" type="big-decimal">
+			<bind-xml name="AliquotaCpp" node="element" />
+		</field>
+		
+		<field name="retidoCpp" type="string" 
+				handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSimNao">
+			<bind-xml name="RetidoCpp" node="element" />
+		</field>
+					
+		<field name="valorCpp" type="big-decimal">
+			<bind-xml name="ValorCpp" node="element" />
+		</field>
+
+		<field name="outrasRetencoes" type="big-decimal">
+			<bind-xml name="OutrasRetencoes" node="element" />
+		</field>
+		
+		<field name="retidoOutrasRetencoes" type="string" 
+				handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSimNao">
+			<bind-xml name="RetidoOutrasRetencoes" node="element" />
+		</field>
+		
+		<field name="aliquotaTotTributos" type="big-decimal">
+			<bind-xml name="AliquotaTotTributos" node="element" />
+		</field>
+					
+		<field name="valorTotTributos" type="big-decimal">
+			<bind-xml name="ValTotTributos" node="element" />
+		</field>
+
+		<field name="valorIss" type="big-decimal">
+			<bind-xml name="ValorIss" node="element" />
+		</field>
+
+		<field name="aliquota" type="big-decimal">
+			<bind-xml name="Aliquota" node="element" />
+		</field>
+
+		<field name="descontoIncondicionado" type="big-decimal">
+			<bind-xml name="DescontoIncondicionado" node="element" />
+		</field>
+
+		<field name="descontoCondicionado" type="big-decimal">
+			<bind-xml name="DescontoCondicionado" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.DadosDeducao">
+
+		<map-to xml="DadosDeducao"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+
+		<field name="tipoDeducao" type="string">
+			<bind-xml name="TipoDeducao" node="element" />
+		</field>
+
+		<field name="cpf" type="string">
+			<bind-xml name="Cpf" node="element" />
+		</field>
+
+		<field name="cnpj" type="string">
+			<bind-xml name="Cnpj" node="element" />
+		</field>
+
+		<field name="numeroNotaFiscalReferencia" type="integer">
+			<bind-xml name="NumeroNotaFiscalReferencia" node="element" />
+		</field>
+
+		<field name="valorTotalNotaFiscal" type="big-decimal">
+			<bind-xml name="ValorTotalNotaFiscal" node="element" />
+		</field>
+
+		<field name="percentualADeduzir" type="big-decimal">
+			<bind-xml name="PercentualADeduzir" node="element" />
+		</field>
+
+		<field name="valorADeduzir" type="big-decimal">
+			<bind-xml name="ValorADeduzir" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.ItemServico">
+
+		<map-to xml="ItemServico"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="itemListaServico" type="string">
+			<bind-xml name="ItemListaServico" node="element" />
+		</field>
+
+		<field name="codigoCnae" type="string">
+			<bind-xml name="CodigoCnae" node="element" />
+		</field>
+
+		<field name="descricao" type="string">
+			<bind-xml name="Descricao" node="element" />
+		</field>
+		
+		<field name="unidade" type="string" 
+				handler="br.com.elotech.tributacao.castor.CastorEnumHandlerUnidade">
+			<bind-xml name="Unidade" node="element" />
+		</field>
+
+		<field name="tributavel" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSimNao">
+			<bind-xml name="Tributavel" node="element" />
+		</field>
+
+		<field name="quantidade" type="big-decimal">
+			<bind-xml name="Quantidade" node="element" />
+		</field>
+
+		<field name="valorUnitario" type="big-decimal">
+			<bind-xml name="ValorUnitario" node="element" />
+		</field>
+
+		<field name="valorDesconto" type="big-decimal">
+			<bind-xml name="ValorDesconto" node="element" />
+		</field>
+
+
+		<field name="valorLiquido" type="big-decimal">
+			<bind-xml name="ValorLiquido" node="element" />
+		</field>
+
+		<field name="dadosDeducao" type="br.com.elotech.tributacao.oxm.nfse.DadosDeducao">
+			<bind-xml name="DadosDeducao" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.ListaItensServico">
+
+		<map-to xml="ListaItensServico"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+
+		<field name="listItemServico" type="br.com.elotech.tributacao.oxm.nfse.ItemServico"
+			collection="arraylist">
+			<bind-xml name="ItemServico" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.DadosServico">
+
+		<map-to xml="Servico"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="valoresDeclaracaoServico"
+			type="br.com.elotech.tributacao.oxm.nfse.ValoresDeclaracaoServico">
+			<bind-xml name="Valores" />
+		</field>
+
+		<field name="issRetido" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSimNao">
+			<bind-xml name="IssRetido" node="element" />
+		</field>
+
+		<field name="responsavelRetencao" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorEnumHandlerResponsavelRetencao">
+			<bind-xml name="ResponsavelRetencao" node="element" />
+		</field>
+
+		<field name="discriminacao" type="string">
+			<bind-xml name="Discriminacao" node="element" />
+		</field>
+		
+		<field name="codigoTributacaoMunicipio" type="string">
+			<bind-xml name="CodigoTributacaoMunicipio" node="element" />
+		</field>
+		
+		<field name="codigoNbs" type="string">
+			<bind-xml name="CodigoNbs" node="element" />
+		</field>
+
+		<field name="codigoMunicipio" type="integer">
+			<bind-xml name="CodigoMunicipio" node="element" />
+		</field>
+
+		<field name="codigoPais" type="string">
+			<bind-xml name="CodigoPais" node="element" />
+		</field>
+
+		<field name="exigibilidadeISS" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorEnumHandlerExigibilidadeIss">
+			<bind-xml name="ExigibilidadeISS" node="element" />
+		</field>
+
+		<field name="municipioIncidencia" type="integer">
+			<bind-xml name="MunicipioIncidencia" node="element" />
+		</field>
+
+		<field name="numeroProcesso" type="string">
+			<bind-xml name="NumeroProcesso" node="element" />
+		</field>
+
+
+		<field name="listaItensServico"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaItensServico">
+			<bind-xml name="ListaItensServico" />
+		</field>
+
+	</class>
+	
+	<class name="br.com.elotech.tributacao.oxm.nfse203.Tomador">
+
+		<map-to xml="Tomador"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="cpfCnpj" type="br.com.elotech.tributacao.oxm.nfse.CpfCnpj">
+			<bind-xml name="CpfCnpj" node="element" />
+		</field>
+
+		<field name="inscricaoMunicipal" type="string">
+			<bind-xml name="InscricaoMunicipal" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.IdentificacaoTomador">
+
+		<map-to xml="IdentificacaoTomador"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="cpfCnpj" type="br.com.elotech.tributacao.oxm.nfse.CpfCnpj">
+			<bind-xml name="CpfCnpj" node="element" />
+		</field>
+
+		<field name="inscricaoMunicipal" type="string">
+			<bind-xml name="InscricaoMunicipal" node="element" />
+		</field>
+
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.Contato">
+
+		<map-to xml="Contato"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+
+
+		<field name="telefone" type="string">
+			<bind-xml name="Telefone" node="element" />
+		</field>
+
+		<field name="email" type="string">
+			<bind-xml name="Email" node="element" />
+		</field>
+
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.PrestadorServico">
+
+		<map-to xml="PrestadorServico"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoPrestador"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoPrestador">
+			<bind-xml name="IdentificacaoPrestador" />
+		</field>
+
+		<field name="razaoSocial" type="string">
+			<bind-xml name="RazaoSocial" node="element" />
+		</field>
+
+		<field name="nomeFantasia" type="string">
+			<bind-xml name="NomeFantasia" node="element" />
+		</field>
+
+
+		<field name="endereco" type="br.com.elotech.tributacao.oxm.nfse.Endereco">
+			<bind-xml name="Endereco" />
+		</field>
+
+		<field name="contato" type="br.com.elotech.tributacao.oxm.nfse.Contato">
+			<bind-xml name="Contato" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.DadosTomador">
+
+		<map-to xml="Tomador"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoTomador"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoTomador">
+			<bind-xml name="IdentificacaoTomador" />
+		</field>
+
+		<field name="nifTomador" type="string">
+			<bind-xml name="NifTomador" node="element" />
+		</field>
+		
+		<field name="razaoSocial" type="string">
+			<bind-xml name="RazaoSocial" node="element" />
+		</field>
+
+		<field name="endereco" type="br.com.elotech.tributacao.oxm.nfse.Endereco">
+			<bind-xml name="Endereco" />
+		</field>
+
+		<field name="contato" type="br.com.elotech.tributacao.oxm.nfse.Contato">
+			<bind-xml name="Contato" />
+		</field>
+
+		<field name="inscricaoEstadual" type="string">
+			<bind-xml name="InscricaoEstadual" node="element" />
+		</field>
+
+	</class>
+	
+	<class name="br.com.elotech.tributacao.oxm.nfse203.Intermediario">
+
+		<map-to xml="Intermediario"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="cpfCnpj" type="br.com.elotech.tributacao.oxm.nfse.CpfCnpj">
+			<bind-xml name="CpfCnpj" node="element" />
+		</field>
+
+		<field name="inscricaoMunicipal" type="string">
+			<bind-xml name="InscricaoMunicipal" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.IdentificacaoIntermediario">
+
+		<map-to xml="IdentificacaoIntermediario"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="cpfCnpj" type="br.com.elotech.tributacao.oxm.nfse.CpfCnpj">
+			<bind-xml name="CpfCnpj" node="element" />
+		</field>
+
+		<field name="inscricaoMunicipal" type="string">
+			<bind-xml name="InscricaoMunicipal" node="element" />
+		</field>
+
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.DadosIntermediario">
+
+		<map-to xml="Intermediario"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoIntermediario"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoIntermediario">
+			<bind-xml name="IdentificacaoIntermediario" />
+		</field>
+
+		<field name="razaoSocial" type="string">
+			<bind-xml name="RazaoSocial" node="element" />
+		</field>
+		
+		<field name="codigoMunicipio" type="long">
+			<bind-xml name="CodigoMunicipio" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.DadosConstrucaoCivil">
+
+		<map-to xml="ConstrucaoCivil"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="codigoObra" type="string">
+			<bind-xml name="CodigoObra" node="element" />
+		</field>
+		
+		<field name="numeroAlvaraConstrucao" type="long">
+			<bind-xml name="NumeroAlvaraConstrucao" node="element" />
+		</field>
+
+		<field name="art" type="string">
+			<bind-xml name="Art" node="element" />
+		</field>
+		
+		<field name="incorporacao" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSimNao">
+			<bind-xml name="Incorporacao" node="element" />
+		</field>
+		
+	</class>
+
+	<class
+		name="br.com.elotech.tributacao.oxm.nfse.InfDeclaracaoPrestacaoServico">
+
+		<map-to xml="InfDeclaracaoPrestacaoServico"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="rps" type="br.com.elotech.tributacao.oxm.nfse.InfRps">
+			<bind-xml name="Rps" />
+		</field>
+
+		<field name="competencia" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorDateHandler">
+			<bind-xml name="Competencia" node="element" />
+		</field>
+
+		<field name="servico" type="br.com.elotech.tributacao.oxm.nfse.DadosServico">
+			<bind-xml name="Servico" />
+		</field>
+		
+		<field name="identificacaoPrestador"
+			type="br.com.elotech.tributacao.oxm.nfse203.Prestador">
+			<bind-xml name="Prestador" />
+		</field>
+
+		<field name="tomador" type="br.com.elotech.tributacao.oxm.nfse.DadosTomador">
+			<bind-xml name="Tomador" />
+		</field>
+
+		<field name="intermediario"
+			type="br.com.elotech.tributacao.oxm.nfse.DadosIntermediario">
+			<bind-xml name="Intermediario" />
+		</field>
+
+		<field name="construcaoCivil"
+			type="br.com.elotech.tributacao.oxm.nfse.DadosConstrucaoCivil">
+			<bind-xml name="ConstrucaoCivil" />
+		</field>
+
+		<field name="regimeEspecialTributacao" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorEnumHandlerRegimeEspecialTributacao">
+			<bind-xml name="RegimeEspecialTributacao" node="element" />
+		</field>
+
+
+		<field name="incentivoFiscal" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSimNao">
+			<bind-xml name="IncentivoFiscal" node="element" />
+		</field>
+
+	</class>
+	
+	<class name="br.com.elotech.tributacao.oxm.nfse203.Rps">
+
+		<map-to xml="Rps"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="infDeclaracaoPrestacaoServico"
+			type="br.com.elotech.tributacao.oxm.nfse.InfDeclaracaoPrestacaoServico">
+			<bind-xml name="InfDeclaracaoPrestacaoServico" />
+		</field>
+
+	</class>
+		
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.DeclaracaoPrestacaoServico">
+
+		<map-to xml="DeclaracaoPrestacaoServico"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="infDeclaracaoPrestacaoServico"
+			type="br.com.elotech.tributacao.oxm.nfse.InfDeclaracaoPrestacaoServico">
+			<bind-xml name="InfDeclaracaoPrestacaoServico" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.InfNfse">
+
+		<map-to xml="InfNfse"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="numero" type="integer">
+			<bind-xml name="Numero" node="element" />
+		</field>
+
+		<field name="codigoVerificacao" type="string">
+			<bind-xml name="CodigoVerificacao" node="element" />
+		</field>
+
+		<field name="dataEmissao" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorDateHandler">
+			<bind-xml name="DataEmissao" node="element" />
+		</field>
+
+		<field name="nfseSubstituida" type="integer">
+			<bind-xml name="NfseSubstituida" node="element" />
+		</field>
+
+		<field name="outrasInformacoes" type="string">
+			<bind-xml name="OutrasInformacoes" node="element" />
+		</field>
+
+		<field name="valoresNfse" type="br.com.elotech.tributacao.oxm.nfse.ValoresNfse">
+			<bind-xml name="ValoresNfse" />
+		</field>
+
+		<field name="valorCredito" type="big-decimal">
+			<bind-xml name="ValorCredito" node="element" />
+		</field>
+		
+		<field name="prestador" type="br.com.elotech.tributacao.oxm.nfse203.PrestadorServico">
+			<bind-xml name="PrestadorServico" />
+		</field>
+
+		<field name="orgaoGerador"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoOrgaoGerador">
+			<bind-xml name="OrgaoGerador" />
+		</field>
+
+		<field name="declaracaoPrestacaoServico"
+			type="br.com.elotech.tributacao.oxm.nfse.DeclaracaoPrestacaoServico">
+			<bind-xml name="DeclaracaoPrestacaoServico" />
+		</field>
+
+		<field name="chaveAcesso" type="string">
+			<bind-xml name="ChaveAcesso" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.Nfse">
+
+		<map-to xml="Nfse"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="infNfse" type="br.com.elotech.tributacao.oxm.nfse.InfNfse">
+			<bind-xml name="InfNfse" />
+		</field>
+
+		<field name="versao" type="string">
+			<bind-xml name="versao" node="attribute" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.InfSubstituicaoNfse">
+
+		<map-to xml="SubstituicaoNfse"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="nfseSubstituidora" type="integer">
+			<bind-xml name="NfseSubstituidora" node="element" />
+		</field>
+
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.SubstituicaoNfse">
+
+		<map-to xml="NfseSubstituicao"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="substituicaoNfse"
+			type="br.com.elotech.tributacao.oxm.nfse.InfSubstituicaoNfse">
+			<bind-xml name="SubstituicaoNfse" />
+		</field>
+
+		<field name="versao" type="string">
+			<bind-xml name="versao" node="attribute" />
+		</field>
+
+	</class>
+	
+	<class name="br.com.elotech.tributacao.oxm.nfse203.SubstituicaoNfse">
+
+		<map-to xml="SubstituicaoNfse"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="pedidoCancelamento"
+			type="br.com.elotech.tributacao.oxm.nfse.PedidoCancelamento">
+			<bind-xml name="Pedido" />
+		</field>
+
+		<field name="declaracaoPrestacaoServico"
+			type="br.com.elotech.tributacao.oxm.nfse203.Rps">
+			<bind-xml name="Rps" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.CompNfse">
+
+		<map-to xml="CompNfse"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="nfse" type="br.com.elotech.tributacao.oxm.nfse.Nfse">
+			<bind-xml name="Nfse" />
+		</field>
+
+		<field name="cancelamentoNfse"
+			type="br.com.elotech.tributacao.oxm.nfse.CancelamentoNfse">
+			<bind-xml name="NfseCancelamento" />
+		</field>
+
+		<field name="substituicaoNfse"
+			type="br.com.elotech.tributacao.oxm.nfse.SubstituicaoNfse">
+			<bind-xml name="NfseSubstituicao" />
+		</field>
+		
+				
+		<field name="xml" type="string" >
+			<bind-xml name="Xml" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.ListaNfse">
+
+		<map-to xml="ListaNfse"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="listCompNfse" type="br.com.elotech.tributacao.oxm.nfse.CompNfse"
+			collection="arraylist">
+			<bind-xml name="CompNfse" />
+		</field>
+
+		<field name="listaMensagemAlertaRetorno"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemAlertaRetorno">
+			<bind-xml name="ListaMensagemAlertaRetorno" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.ConsultarLoteRpsResposta">
+
+
+		<map-to xml="ConsultarLoteRpsResposta"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="situacao" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorEnumHandlerSituacaoLoteRps">
+			<bind-xml name="Situacao" node="element" />
+		</field>
+
+		<field name="listaNfse" type="br.com.elotech.tributacao.oxm.nfse.ListaNfse">
+			<bind-xml name="ListaNfse" />
+		</field>
+
+		<field name="listaMensagemRetorno"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetorno">
+			<bind-xml name="ListaMensagemRetorno" />
+		</field>
+
+		<field name="listaMensagemRetornoLote"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetornoLote">
+			<bind-xml name="ListaMensagemRetornoLote" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.NotaFiscalFaixa">
+
+		<map-to xml="Faixa"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="numeroInicial" type="integer">
+			<bind-xml name="NumeroNfseInicial" node="element" />
+		</field>
+
+		<field name="numeroFinal" type="integer">
+			<bind-xml name="NumeroNfseFinal" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.ConsultarNfseFaixaEnvio">
+
+		<map-to xml="ConsultarNfseFaixaEnvio"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoRequerente"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRequerente">
+			<bind-xml name="IdentificacaoRequerente" />
+		</field>
+
+		<field name="notaFiscalFaixa" type="br.com.elotech.tributacao.oxm.nfse.NotaFiscalFaixa">
+			<bind-xml name="Faixa" />
+		</field>
+
+		<field name="pagina" type="integer">
+			<bind-xml name="Pagina" node="element" />
+		</field>
+
+	</class>
+	
+	<class name="br.com.elotech.tributacao.oxm.nfse203.ListaNfse">
+
+		<map-to xml="ListaNfse"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="listCompNfse" type="br.com.elotech.tributacao.oxm.nfse.CompNfse"
+			collection="arraylist">
+			<bind-xml name="CompNfse" />
+		</field>
+
+		<field name="proximaPagina" type="integer">
+			<bind-xml name="ProximaPagina" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.ListaConsultaNfse">
+
+		<map-to xml="ListaConsultaNfse"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="listCompNfse" type="br.com.elotech.tributacao.oxm.nfse.CompNfse"
+			collection="arraylist">
+			<bind-xml name="CompNfse" />
+		</field>
+
+		<field name="proximaPagina" type="integer">
+			<bind-xml name="ProximaPagina" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.ConsultarNfseFaixaResposta">
+
+		<map-to xml="ConsultarNfseFaixaResposta"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="listaNfse"
+			type="br.com.elotech.tributacao.oxm.nfse203.ListaNfse">
+			<bind-xml name="ListaNfse" />
+		</field>
+
+		<field name="listaMensagemRetorno"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetorno">
+			<bind-xml name="ListaMensagemRetorno" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.ConsultarNfseRpsEnvio">
+
+		<map-to xml="ConsultarNfseRpsEnvio"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoRps"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRps">
+			<bind-xml name="IdentificacaoRps" />
+		</field>
+
+		<field name="identificacaoRequerente"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRequerente">
+			<bind-xml name="IdentificacaoRequerente" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.ConsultarNfseRpsResposta">
+
+		<map-to xml="ConsultarNfseRpsResposta"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="compNfse" type="br.com.elotech.tributacao.oxm.nfse.CompNfse">
+			<bind-xml name="CompNfse" />
+		</field>
+
+		<field name="listaMensagemRetorno"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetorno">
+			<bind-xml name="ListaMensagemRetorno" />
+		</field>
+
+	</class>
+	
+	<class name="br.com.elotech.tributacao.oxm.nfse.PeriodoCompetencia">
+
+		<map-to xml="PeriodoCompetencia"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="dataInicial" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorDateHandler">
+			<bind-xml name="DataInicial" node="element" />
+		</field>
+
+		<field name="dataFinal" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorDateHandler">
+			<bind-xml name="DataFinal" node="element" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.PeriodoData">
+
+		<map-to xml="PeriodoEmissao"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="dataInicial" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorDateHandler">
+			<bind-xml name="DataInicial" node="element" />
+		</field>
+
+		<field name="dataFinal" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorDateHandler">
+			<bind-xml name="DataFinal" node="element" />
+		</field>
+
+	</class>
+
+	<class
+		name="br.com.elotech.tributacao.oxm.nfse203.ConsultarNfseServicoPrestadoEnvio">
+
+		<map-to xml="ConsultarNfseServicoPrestadoEnvio"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoRequerente"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRequerente">
+			<bind-xml name="IdentificacaoRequerente" />
+		</field>
+
+		<field name="numeroNfse" type="integer">
+			<bind-xml name="NumeroNfse" node="element" />
+		</field>
+
+		<field name="periodoEmissao" type="br.com.elotech.tributacao.oxm.nfse.PeriodoData">
+			<bind-xml name="PeriodoEmissao" />
+		</field>
+		
+		<field name="periodoCompetencia" type="br.com.elotech.tributacao.oxm.nfse.PeriodoCompetencia">
+			<bind-xml name="PeriodoCompetencia" />
+		</field>
+
+		<field name="identificacaoTomador"
+			type="br.com.elotech.tributacao.oxm.nfse203.Tomador">
+			<bind-xml name="Tomador" />
+		</field>
+
+		<field name="identificacaoIntermediario"
+			type="br.com.elotech.tributacao.oxm.nfse203.Intermediario">
+			<bind-xml name="Intermediario" />
+		</field>
+
+		<field name="pagina" type="integer">
+			<bind-xml name="Pagina" node="element" />
+		</field>
+
+	</class>
+
+	<class
+		name="br.com.elotech.tributacao.oxm.nfse203.ConsultarNfseServicoPrestadoResposta">
+
+		<map-to xml="ConsultarNfseServicoPrestadoResposta"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="listaNfse"
+			type="br.com.elotech.tributacao.oxm.nfse203.ListaNfse">
+			<bind-xml name="ListaNfse" />
+		</field>
+
+		<field name="listaMensagemRetorno"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetorno">
+			<bind-xml name="ListaMensagemRetorno" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRequerente">
+
+		<map-to xml="IdentificacaoRequerente"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="cpfCnpj" type="br.com.elotech.tributacao.oxm.nfse.CpfCnpj">
+			<bind-xml name="CpfCnpj" node="element" />
+		</field>
+
+		<field name="inscricaoMunicipal" type="string">
+			<bind-xml name="InscricaoMunicipal" node="element" />
+		</field>
+
+		<field name="senha" type="string">
+			<bind-xml name="Senha" node="element" />
+		</field>
+
+		<field name="homologa" type="boolean">
+			<bind-xml name="Homologa" node="element" />
+		</field>
+
+	</class>
+
+	<class
+		name="br.com.elotech.tributacao.oxm.nfse203.ConsultarNfseServicoTomadoEnvio">
+
+		<map-to xml="ConsultarNfseServicoTomadoEnvio"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoRequerente"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRequerente">
+			<bind-xml name="IdentificacaoRequerente" />
+		</field>
+
+		<field name="numeroNfse" type="integer" required="true">
+			<bind-xml name="NumeroNfse" node="element" />
+		</field>
+
+		<field name="periodoEmissao" type="br.com.elotech.tributacao.oxm.nfse.PeriodoData">
+			<bind-xml name="PeriodoEmissao" />
+		</field>
+		
+		<field name="periodoCompetencia" type="br.com.elotech.tributacao.oxm.nfse.PeriodoCompetencia">
+			<bind-xml name="PeriodoCompetencia" />
+		</field>
+
+		<field name="identificacaoPrestador"
+			type="br.com.elotech.tributacao.oxm.nfse203.Prestador">
+			<bind-xml name="Prestador" />
+		</field>
+		
+		<field name="identificacaoTomador"
+			type="br.com.elotech.tributacao.oxm.nfse203.Tomador">
+			<bind-xml name="Tomador" />
+		</field>
+
+		<field name="identificacaoIntermediario"
+			type="br.com.elotech.tributacao.oxm.nfse203.Intermediario">
+			<bind-xml name="Intermediario" />
+		</field>
+
+		<field name="pagina" type="integer">
+			<bind-xml name="Pagina" node="element" />
+		</field>
+
+	</class>
+
+	<class
+		name="br.com.elotech.tributacao.oxm.nfse203.ConsultarNfseServicoTomadoResposta">
+
+		<map-to xml="ConsultarNfseServicoTomadoResposta"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="listaNfse"
+			type="br.com.elotech.tributacao.oxm.nfse203.ListaNfse">
+			<bind-xml name="ListaNfse" />
+		</field>
+
+		<field name="listaMensagemRetorno"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetorno">
+			<bind-xml name="ListaMensagemRetorno" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.ListaRps">
+
+		<map-to xml="ListaRps"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="listDeclaracaoPrestacaoServico"
+			type="br.com.elotech.tributacao.oxm.nfse203.Rps"
+			collection="arraylist">
+			<bind-xml name="Rps" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.LoteRps">
+
+		<map-to xml="LoteRps"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="numeroLote" type="integer">
+			<bind-xml name="NumeroLote" node="element" />
+		</field>
+		
+		<field name="cpfCnpj" type="br.com.elotech.tributacao.oxm.nfse.CpfCnpj">
+			<bind-xml name="CpfCnpj" node="element" />
+		</field>
+		
+		<field name="inscricaoMunicipal" type="string">
+			<bind-xml name="InscricaoMunicipal" node="element" />
+		</field>
+
+		<field name="quantidadeRps" type="integer">
+			<bind-xml name="QuantidadeRps" node="element" />
+		</field>
+
+		<field name="listaRps" type="br.com.elotech.tributacao.oxm.nfse.ListaRps">
+			<bind-xml name="ListaRps" node="element" />
+		</field>
+		
+		<field name="versao" type="string">
+			<bind-xml name="versao" node="attribute" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.EnviarLoteRpsEnvio">
+
+		<map-to xml="EnviarLoteRpsEnvio"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoRequerente"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRequerente">
+			<bind-xml name="IdentificacaoRequerente" />
+		</field>
+
+		<field name="loteRps" type="br.com.elotech.tributacao.oxm.nfse.LoteRps">
+			<bind-xml name="LoteRps" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.EnviarLoteRpsResposta">
+
+		<map-to xml="EnviarLoteRpsResposta"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="numeroLote" type="integer">
+			<bind-xml name="NumeroLote" node="element" />
+		</field>
+
+		<field name="dataRecebimento" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorDateHandler">
+			<bind-xml name="DataRecebimento" node="element" />
+		</field>
+
+		<field name="listaMensagemRetorno"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetorno">
+			<bind-xml name="ListaMensagemRetorno" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.EnviarLoteRpsSincronoEnvio">
+
+		<map-to xml="EnviarLoteRpsSincronoEnvio"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="identificacaoRequerente"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRequerente">
+			<bind-xml name="IdentificacaoRequerente" />
+		</field>
+
+		<field name="loteRps" type="br.com.elotech.tributacao.oxm.nfse.LoteRps">
+			<bind-xml name="LoteRps" />
+		</field>
+
+	</class>
+
+	<class
+		name="br.com.elotech.tributacao.oxm.nfse203.EnviarLoteRpsSincronoResposta">
+
+		<map-to xml="EnviarLoteRpsSincronoResposta"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="numeroLote" type="integer">
+			<bind-xml name="NumeroLote" node="element" />
+		</field>
+
+		<field name="dataRecebimento" type="string"
+			handler="br.com.elotech.tributacao.castor.CastorDateHandler">
+			<bind-xml name="DataRecebimento" node="element" />
+		</field>
+
+		<field name="listaNfse" type="br.com.elotech.tributacao.oxm.nfse.ListaNfse">
+			<bind-xml name="ListaNfse" />
+		</field>
+
+		<field name="listaMensagemRetorno"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetorno">
+			<bind-xml name="ListaMensagemRetorno" />
+		</field>
+
+		<field name="listaMensagemRetornoLote"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetornoLote">
+			<bind-xml name="ListaMensagemRetornoLote" />
+		</field>
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.SubstituirNfseEnvio">
+
+		<map-to xml="SubstituirNfseEnvio"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+			
+		<field name="identificacaoRequerente"
+			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRequerente">
+			<bind-xml name="IdentificacaoRequerente" />
+		</field>
+
+		<field name="substituicaoNfse"
+			type="br.com.elotech.tributacao.oxm.nfse203.SubstituicaoNfse">
+			<bind-xml name="SubstituicaoNfse" />
+		</field>		
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.NfseSubstituida">
+
+		<map-to xml="NfseSubstituida"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="compNfse" type="br.com.elotech.tributacao.oxm.nfse.CompNfse">
+			<bind-xml name="CompNfse" />
+		</field>
+
+		<field name="listaMensagemRetorno"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetorno">
+			<bind-xml name="ListaMensagemRetorno" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.NfseSubstituidora">
+
+		<map-to xml="NfseSubstituidora"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="compNfse" type="br.com.elotech.tributacao.oxm.nfse.CompNfse">
+			<bind-xml name="CompNfse" />
+		</field>
+
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse.RetSubstituicao">
+
+		<map-to xml="RetSubstituicao"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="nfseSubstituida" type="br.com.elotech.tributacao.oxm.nfse.NfseSubstituida">
+			<bind-xml name="NfseSubstituida" />
+		</field>
+
+		<field name="nfseSubstituidora"
+			type="br.com.elotech.tributacao.oxm.nfse.NfseSubstituidora">
+			<bind-xml name="NfseSubstituidora" />
+		</field>
+
+	</class>
+
+	<class name="br.com.elotech.tributacao.oxm.nfse203.SubstituirNfseResposta">
+
+		<map-to xml="SubstituirNfseResposta"
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
+
+		<field name="retSubstituicao" type="br.com.elotech.tributacao.oxm.nfse.RetSubstituicao">
+			<bind-xml name="RetSubstituicao" />
+		</field>
+
+		<field name="listaMensagemRetorno"
+			type="br.com.elotech.tributacao.oxm.nfse.ListaMensagemRetorno">
+			<bind-xml name="ListaMensagemRetorno" />
+		</field>
+
+	</class>
+	
+</mapping>
