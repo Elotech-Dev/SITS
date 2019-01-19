@@ -162,7 +162,7 @@
 	<class name="br.com.elotech.tributacao.oxm.nfse203.MensagemRetorno">
 
 		<map-to xml="MensagemRetorno"
-			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v1_2.xsd" />
+			ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd" />
 
 		<field name="identificacaoRps"
 			type="br.com.elotech.tributacao.oxm.nfse.IdentificacaoRps">

@@ -20,7 +20,7 @@
 
 	<groupId>br.com.elotech.sits</groupId>
 	<artifactId>WSProxy</artifactId>
-	<version>3.1.0-SNAPSHOT</version>
+	<version>3.1.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>SITS</name>
