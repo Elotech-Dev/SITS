@@ -41,12 +41,12 @@ import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
 abstract class AbstractService implements Service {
-	
+
 	private static final String ATRIBUTO_PRINCIPAL_NOTA_FISCAL = "xmlns";
 	private static final String XSD_VERSAO_2_03 = "nfse_v2_03.xsd";
 
 	CastorMarshaller castorMarshaller;
-	
+
 	CastorMarshaller castorMarshallerNfse203;
 
 	String dirToSend;
@@ -56,39 +56,37 @@ abstract class AbstractService implements Service {
 	String dirSent;
 
 	WebServiceTemplate webServiceTemplate;
-	
+
 	WebServiceTemplate webServiceVersao203Template;
 
 	public WebServiceTemplate getWebServiceTemplate() {
 		return webServiceTemplate;
 	}
-	
+
 	public WebServiceTemplate getWebServiceVersao203Template() {
 		return webServiceVersao203Template;
 	}
-	
+
 	public WebServiceTemplate getWebServiceTemplateByXSD(Node node) {
-		
-		if(Objects.nonNull(node) &&  
-				Objects.nonNull(node.getNodeValue()) && 
-				node.getNodeValue().contains(XSD_VERSAO_2_03)){
-			return webServiceVersao203Template;		
+
+		if (Objects.nonNull(node) && Objects.nonNull(node.getNodeValue())
+				&& node.getNodeValue().contains(XSD_VERSAO_2_03)) {
+			return webServiceVersao203Template;
 		}
-		
+
 		return webServiceTemplate;
 	}
-	
+
 	public CastorMarshaller getCastorMarshallerByXSD(Node node) {
-		
-		if(Objects.nonNull(node) &&  
-				Objects.nonNull(node.getNodeValue()) && 
-				node.getNodeValue().contains(XSD_VERSAO_2_03)){
-			return castorMarshallerNfse203;		
+
+		if (Objects.nonNull(node) && Objects.nonNull(node.getNodeValue())
+				&& node.getNodeValue().contains(XSD_VERSAO_2_03)) {
+			return castorMarshallerNfse203;
 		}
-		
+
 		return castorMarshaller;
 	}
-	
+
 	public List<File> getFilesToSend() {
 
 		File fileDirToSend = new File(dirToSend);
@@ -114,76 +112,78 @@ abstract class AbstractService implements Service {
 		return getDestFile(receivedFile, "resp", dirReceived);
 
 	}
-	
+
 	public File getFileToWriteSent(File sentFile) {
 
 		return getDestFile(sentFile, "sent", dirSent);
 
 	}
-	
+
 	private File getDestFile(File srcFile, String prefix, String destDir) {
 
-		return new File(String.format("%s%s%s_%s", destDir,
-				File.separator, prefix, srcFile.getName()));
-		
+		return new File(String.format("%s%s%s_%s", destDir, File.separator, prefix, srcFile.getName()));
+
 	}
 
-	public Object getObjectsToSend(File fileToSend, Node node) throws XmlMappingException, IOException, ParserConfigurationException, SAXException {
+	public Object getObjectsToSend(File fileToSend, Node node)
+			throws XmlMappingException, IOException, ParserConfigurationException, SAXException {
 
 		CastorMarshaller castorMarshallerByXSD = getCastorMarshallerByXSD(node);
-		
+
 		Source source = new StreamSource(new FileInputStream(fileToSend));
-		
+
 		return castorMarshallerByXSD.unmarshal(source);
-			
+
 	}
-	
-	public void writeReceived(File fileToWrite, Object received, Node node) throws XmlMappingException, IOException, ParserConfigurationException, SAXException {
-		
+
+	public void writeReceived(File fileToWrite, Object received, Node node)
+			throws XmlMappingException, IOException, ParserConfigurationException, SAXException {
+
 		CastorMarshaller castorMarshallerByXSD = getCastorMarshallerByXSD(node);
-		
-		FileOutputStream fos =  new FileOutputStream(fileToWrite);
-		
+
+		FileOutputStream fos = new FileOutputStream(fileToWrite);
+
 		Result result = new StreamResult(fos);
-		
+
+//		castorMarshallerByXSD.marshal(received, result);
 		castorMarshallerByXSD.marshal(received, result);
-		
+
 		fos.flush();
-		
+
 		fos.close();
-		
+
 	}
-	
+
 	public void moveToSent(File fileSent) throws IOException {
-		
+
 		FileUtils.moveFile(fileSent, getFileToWriteSent(fileSent));
-		
+
 	}
-	
-	public Node getXSDNotaFiscal(File file) throws ParserConfigurationException, SAXException, IOException{
-		
+
+	public Node getXSDNotaFiscal(File file) throws ParserConfigurationException, SAXException, IOException {
+
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		dbFactory.setNamespaceAware(true);
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		Document doc = dBuilder.parse(file);
-		
-		Node root = (Node)doc.getDocumentElement();
-		
+
+		Node root = (Node) doc.getDocumentElement();
+
 		NamedNodeMap attributes = root.getAttributes();
-	    if (attributes != null){
-	        for (int i = 0; i < attributes.getLength(); i++){
-	            Node node = attributes.item(i);
-	            if (node.getNodeType() == Node.ATTRIBUTE_NODE){
-	            	
-	            	if(ATRIBUTO_PRINCIPAL_NOTA_FISCAL.equals(node.getNodeName())){
-	            		return node;
-	            	}	                
-	            }
-	        }
-	    }
-	    
-	    return null;
-		
+		if (attributes != null) {
+			for (int i = 0; i < attributes.getLength(); i++) {
+				Node node = attributes.item(i);
+				if (node.getNodeType() == Node.ATTRIBUTE_NODE) {
+
+					if (ATRIBUTO_PRINCIPAL_NOTA_FISCAL.equals(node.getNodeName())) {
+						return node;
+					}
+				}
+			}
+		}
+
+		return null;
+
 	}
 
 }

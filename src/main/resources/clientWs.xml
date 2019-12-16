@@ -105,10 +105,14 @@
 	</bean>
 
 	<bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller"
-		p:mappingLocation="classpath:castor-mapping.xml" />
+		p:mappingLocation="classpath:castor-mapping.xml">
+		<property name="whitespacePreserve" value="true" />
+	</bean>
 		
 	<bean id="castorMarshallerNfse203" class="org.springframework.oxm.castor.CastorMarshaller"
-		p:mappingLocation="classpath:castor-wsnfse203-mapping.xml" />
+		p:mappingLocation="classpath:castor-wsnfse203-mapping.xml">
+		<property name="whitespacePreserve" value="true" />
+	</bean>
 		
 	<bean id="dirToSend" class="java.lang.String">
 		<constructor-arg type="java.lang.String" value="${ISS.dirToSend}"/>
