@@ -19,3 +19,15 @@ target/
 .settings/
 .classpath
 .project
+
+######################
+# Intellij
+######################
+.idea/**
+logs/**
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+*.editorconfig
