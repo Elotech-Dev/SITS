@@ -15,19 +15,45 @@ hs_err_pid*
 bin/
 target/
 
-# Eclipse
-.settings/
-.classpath
-.project
-
 ######################
 # Intellij
 ######################
-.idea/**
+**/.idea/**
 logs/**
 *.iml
 *.iws
 *.ipr
 *.ids
 *.orig
-*.editorconfig
+
+######################
+# Eclipse
+######################
+.metadata
+bin/
+tmp/
+logs/
+META-INF/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.externalToolBuilders/
+*.launch
+*.pydevproject
+.cproject
+.classpath
+.factorypath
+.buildpath
+.target
+.tern-project
+.texlipse
+.springBeans
+.recommenders/
+*.sonarlint
+.vscode
