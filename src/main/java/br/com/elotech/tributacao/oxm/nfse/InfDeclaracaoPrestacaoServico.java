@@ -1,151 +1,162 @@
-/* 
+/*
  * Copyright 2016 ELOTECH GESTAO PUBLICA LTDA
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License. 
+ * limitations under the License.
  */
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-import java.util.Date;
-
 import br.com.elotech.tributacao.oxm.nfse203.Prestador;
+import br.com.elotech.tributacao.oxm.reformatributaria.InfIbsCbs;
+
+import java.util.Date;
 
 public class InfDeclaracaoPrestacaoServico {
 
-	private InfRps rps;
+    private InfRps rps;
 
-	private Date competencia;
+    private Date competencia;
 
-	private DadosServico servico;
+    private DadosServico servico;
 
-	private DadosPrestador prestador;
-	
-	private Prestador identificacaoPrestador;
+    private DadosPrestador prestador;
 
-	private DadosTomador tomador;
+    private Prestador identificacaoPrestador;
 
-	private DadosIntermediario intermediario;
+    private DadosTomador tomador;
 
-	private DadosConstrucaoCivil construcaoCivil;
+    private DadosIntermediario intermediario;
 
-	private RegimeEspecialTributacao regimeEspecialTributacao;
+    private DadosConstrucaoCivil construcaoCivil;
 
-	private SimNao incentivoFiscal;
+    private RegimeEspecialTributacao regimeEspecialTributacao;
 
-	public InfRps getRps() {
-		return rps;
-	}
+    private SimNao incentivoFiscal;
 
-	public void setRps(InfRps rps) {
-		this.rps = rps;
-	}
+    private InfIbsCbs infIbsCbs;
 
-	public Date getCompetencia() {
-		return competencia;
-	}
+    public InfIbsCbs getInfIbsCbs() {
+        return infIbsCbs;
+    }
 
-	public void setCompetencia(Date competencia) {
-		this.competencia = competencia;
-	}
+    public void setInfIbsCbs(InfIbsCbs infIbsCbs) {
+        this.infIbsCbs = infIbsCbs;
+    }
 
-	public DadosServico getServico() {
-		return servico;
-	}
+    public InfRps getRps() {
+        return rps;
+    }
 
-	public void setServico(DadosServico servico) {
-		this.servico = servico;
-	}
+    public void setRps(InfRps rps) {
+        this.rps = rps;
+    }
 
-	public DadosPrestador getPrestador() {
-		return prestador;
-	}
+    public Date getCompetencia() {
+        return competencia;
+    }
 
-	public void setPrestador(DadosPrestador prestador) {
-		this.prestador = prestador;
-	}
+    public void setCompetencia(Date competencia) {
+        this.competencia = competencia;
+    }
 
-	public DadosTomador getTomador() {
-		return tomador;
-	}
+    public DadosServico getServico() {
+        return servico;
+    }
 
-	public void setTomador(DadosTomador tomador) {
-		this.tomador = tomador;
-	}
+    public void setServico(DadosServico servico) {
+        this.servico = servico;
+    }
 
-	public DadosIntermediario getIntermediario() {
-		return intermediario;
-	}
+    public DadosPrestador getPrestador() {
+        return prestador;
+    }
 
-	public void setIntermediario(DadosIntermediario intermediario) {
-		this.intermediario = intermediario;
-	}
+    public void setPrestador(DadosPrestador prestador) {
+        this.prestador = prestador;
+    }
 
-	public DadosConstrucaoCivil getConstrucaoCivil() {
-		return construcaoCivil;
-	}
+    public DadosTomador getTomador() {
+        return tomador;
+    }
 
-	public void setConstrucaoCivil(DadosConstrucaoCivil construcaoCivil) {
-		this.construcaoCivil = construcaoCivil;
-	}
+    public void setTomador(DadosTomador tomador) {
+        this.tomador = tomador;
+    }
 
-	public RegimeEspecialTributacao getRegimeEspecialTributacao() {
-		return regimeEspecialTributacao;
-	}
+    public DadosIntermediario getIntermediario() {
+        return intermediario;
+    }
 
-	public void setRegimeEspecialTributacao(
-			RegimeEspecialTributacao regimeEspecialTributacao) {
-		this.regimeEspecialTributacao = regimeEspecialTributacao;
-	}
+    public void setIntermediario(DadosIntermediario intermediario) {
+        this.intermediario = intermediario;
+    }
 
-	public SimNao getIncentivoFiscal() {
-		return incentivoFiscal;
-	}
+    public DadosConstrucaoCivil getConstrucaoCivil() {
+        return construcaoCivil;
+    }
 
-	public void setIncentivoFiscal(SimNao incentivoFiscal) {
-		this.incentivoFiscal = incentivoFiscal;
-	}
-	
-	public Prestador getIdentificacaoPrestador() {
-		return identificacaoPrestador;
-	}
+    public void setConstrucaoCivil(DadosConstrucaoCivil construcaoCivil) {
+        this.construcaoCivil = construcaoCivil;
+    }
 
-	public void setIdentificacaoPrestador(
-			Prestador identificacaoPrestador) {
-		this.identificacaoPrestador = identificacaoPrestador;
-	}
+    public RegimeEspecialTributacao getRegimeEspecialTributacao() {
+        return regimeEspecialTributacao;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("InfDeclaracaoPrestacaoServico [rps=");
-		builder.append(rps);
-		builder.append(", competencia=");
-		builder.append(competencia);
-		builder.append(", servico=");
-		builder.append(servico);
-		builder.append(", prestador=");
-		builder.append(prestador);
-		builder.append(", tomador=");
-		builder.append(tomador);
-		builder.append(", intermediario=");
-		builder.append(intermediario);
-		builder.append(", construcaoCivil=");
-		builder.append(construcaoCivil);
-		builder.append(", regimeEspecialTributacao=");
-		builder.append(regimeEspecialTributacao);
-		builder.append(", incentivoFiscal=");
-		builder.append(incentivoFiscal);
-		builder.append("]");
-		return builder.toString();
-	}
+    public void setRegimeEspecialTributacao(
+            RegimeEspecialTributacao regimeEspecialTributacao) {
+        this.regimeEspecialTributacao = regimeEspecialTributacao;
+    }
+
+    public SimNao getIncentivoFiscal() {
+        return incentivoFiscal;
+    }
+
+    public void setIncentivoFiscal(SimNao incentivoFiscal) {
+        this.incentivoFiscal = incentivoFiscal;
+    }
+
+    public Prestador getIdentificacaoPrestador() {
+        return identificacaoPrestador;
+    }
+
+    public void setIdentificacaoPrestador(
+            Prestador identificacaoPrestador) {
+        this.identificacaoPrestador = identificacaoPrestador;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("InfDeclaracaoPrestacaoServico [rps=");
+        builder.append(rps);
+        builder.append(", competencia=");
+        builder.append(competencia);
+        builder.append(", servico=");
+        builder.append(servico);
+        builder.append(", prestador=");
+        builder.append(prestador);
+        builder.append(", tomador=");
+        builder.append(tomador);
+        builder.append(", intermediario=");
+        builder.append(intermediario);
+        builder.append(", construcaoCivil=");
+        builder.append(construcaoCivil);
+        builder.append(", regimeEspecialTributacao=");
+        builder.append(regimeEspecialTributacao);
+        builder.append(", incentivoFiscal=");
+        builder.append(incentivoFiscal);
+        builder.append("]");
+        return builder.toString();
+    }
 
 }

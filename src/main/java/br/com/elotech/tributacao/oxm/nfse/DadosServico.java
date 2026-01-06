@@ -1,168 +1,180 @@
-/* 
+/*
  * Copyright 2016 ELOTECH GESTAO PUBLICA LTDA
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License. 
+ * limitations under the License.
  */
 
 package br.com.elotech.tributacao.oxm.nfse;
 
+import br.com.elotech.tributacao.oxm.reformatributaria.IbsCbs;
+
 public class DadosServico {
 
-	private ValoresDeclaracaoServico valoresDeclaracaoServico;
+    private ValoresDeclaracaoServico valoresDeclaracaoServico;
 
-	private SimNao issRetido;
+    private SimNao issRetido;
 
-	private ResponsavelRetencao responsavelRetencao;
+    private ResponsavelRetencao responsavelRetencao;
 
-	private String discriminacao;
-	
-	private String codigoTributacaoMunicipio;
-	
-	private String codigoNbs;
+    private String discriminacao;
 
-	private Integer codigoMunicipio;
+    private String codigoTributacaoMunicipio;
 
-	private String codigoPais;
+    private String codigoNbs;
 
-	private ExigibilidadeIss exigibilidadeISS;
+    private Integer codigoMunicipio;
 
-	private Integer municipioIncidencia;
+    private String codigoPais;
 
-	private String numeroProcesso;
+    private ExigibilidadeIss exigibilidadeISS;
 
-	private ListaItensServico listaItensServico;
+    private Integer municipioIncidencia;
 
-	public ListaItensServico getListaItensServico() {
-		return listaItensServico;
-	}
+    private String numeroProcesso;
 
-	public void setListaItensServico(ListaItensServico listaItensServico) {
-		this.listaItensServico = listaItensServico;
-	}
+    private ListaItensServico listaItensServico;
 
-	public ValoresDeclaracaoServico getValoresDeclaracaoServico() {
-		return valoresDeclaracaoServico;
-	}
+    private IbsCbs ibsCbs;
 
-	public void setValoresDeclaracaoServico(
-			ValoresDeclaracaoServico valoresDeclaracaoServico) {
-		this.valoresDeclaracaoServico = valoresDeclaracaoServico;
-	}
+    public IbsCbs getIbsCbs() {
+        return ibsCbs;
+    }
 
-	public SimNao getIssRetido() {
-		return issRetido;
-	}
+    public void setIbsCbs(IbsCbs ibsCbs) {
+        this.ibsCbs = ibsCbs;
+    }
 
-	public void setIssRetido(SimNao issRetido) {
-		this.issRetido = issRetido;
-	}
+    public ListaItensServico getListaItensServico() {
+        return listaItensServico;
+    }
 
-	public ResponsavelRetencao getResponsavelRetencao() {
-		return responsavelRetencao;
-	}
+    public void setListaItensServico(ListaItensServico listaItensServico) {
+        this.listaItensServico = listaItensServico;
+    }
 
-	public void setResponsavelRetencao(ResponsavelRetencao responsavelRetencao) {
-		this.responsavelRetencao = responsavelRetencao;
-	}
-	
-	public String getCodigoTributacaoMunicipio() {
-		return codigoTributacaoMunicipio;
-	}
+    public ValoresDeclaracaoServico getValoresDeclaracaoServico() {
+        return valoresDeclaracaoServico;
+    }
 
-	public void setCodigoTributacaoMunicipio(String codigoTributacaoMunicipio) {
-		this.codigoTributacaoMunicipio = codigoTributacaoMunicipio;
-	}
+    public void setValoresDeclaracaoServico(
+            ValoresDeclaracaoServico valoresDeclaracaoServico) {
+        this.valoresDeclaracaoServico = valoresDeclaracaoServico;
+    }
 
-	public String getCodigoNbs() {
-		return codigoNbs;
-	}
+    public SimNao getIssRetido() {
+        return issRetido;
+    }
 
-	public void setCodigoNbs(String codigoNbs) {
-		this.codigoNbs = codigoNbs;
-	}
+    public void setIssRetido(SimNao issRetido) {
+        this.issRetido = issRetido;
+    }
 
-	public String getDiscriminacao() {
-		return discriminacao;
-	}
+    public ResponsavelRetencao getResponsavelRetencao() {
+        return responsavelRetencao;
+    }
 
-	public void setDiscriminacao(String discriminacao) {
-		this.discriminacao = discriminacao;
-	}
+    public void setResponsavelRetencao(ResponsavelRetencao responsavelRetencao) {
+        this.responsavelRetencao = responsavelRetencao;
+    }
 
-	public Integer getCodigoMunicipio() {
-		return codigoMunicipio;
-	}
+    public String getCodigoTributacaoMunicipio() {
+        return codigoTributacaoMunicipio;
+    }
 
-	public void setCodigoMunicipio(Integer codigoMunicipio) {
-		this.codigoMunicipio = codigoMunicipio;
-	}
+    public void setCodigoTributacaoMunicipio(String codigoTributacaoMunicipio) {
+        this.codigoTributacaoMunicipio = codigoTributacaoMunicipio;
+    }
 
-	public String getCodigoPais() {
-		return codigoPais;
-	}
+    public String getCodigoNbs() {
+        return codigoNbs;
+    }
 
-	public void setCodigoPais(String codigoPais) {
-		this.codigoPais = codigoPais;
-	}
+    public void setCodigoNbs(String codigoNbs) {
+        this.codigoNbs = codigoNbs;
+    }
 
-	public ExigibilidadeIss getExigibilidadeISS() {
-		return exigibilidadeISS;
-	}
+    public String getDiscriminacao() {
+        return discriminacao;
+    }
 
-	public void setExigibilidadeISS(ExigibilidadeIss exigibilidadeISS) {
-		this.exigibilidadeISS = exigibilidadeISS;
-	}
+    public void setDiscriminacao(String discriminacao) {
+        this.discriminacao = discriminacao;
+    }
 
-	public Integer getMunicipioIncidencia() {
-		return municipioIncidencia;
-	}
+    public Integer getCodigoMunicipio() {
+        return codigoMunicipio;
+    }
 
-	public void setMunicipioIncidencia(Integer municipioIncidencia) {
-		this.municipioIncidencia = municipioIncidencia;
-	}
+    public void setCodigoMunicipio(Integer codigoMunicipio) {
+        this.codigoMunicipio = codigoMunicipio;
+    }
 
-	public String getNumeroProcesso() {
-		return numeroProcesso;
-	}
+    public String getCodigoPais() {
+        return codigoPais;
+    }
 
-	public void setNumeroProcesso(String numeroProcesso) {
-		this.numeroProcesso = numeroProcesso;
-	}
+    public void setCodigoPais(String codigoPais) {
+        this.codigoPais = codigoPais;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("DadosServico [valoresDeclaracaoServico=");
-		builder.append(valoresDeclaracaoServico);
-		builder.append(", issRetido=");
-		builder.append(issRetido);
-		builder.append(", responsavelRetencao=");
-		builder.append(responsavelRetencao);
-		builder.append(", discriminacao=");
-		builder.append(discriminacao);
-		builder.append(", codigoMunicipio=");
-		builder.append(codigoMunicipio);
-		builder.append(", codigoPais=");
-		builder.append(codigoPais);
-		builder.append(", exigibilidadeISS=");
-		builder.append(exigibilidadeISS);
-		builder.append(", municipioIncidencia=");
-		builder.append(municipioIncidencia);
-		builder.append(", numeroProcesso=");
-		builder.append(numeroProcesso);
-		builder.append(", listaItensServico=");
-		builder.append(listaItensServico);
-		builder.append("]");
-		return builder.toString();
-	}
+    public ExigibilidadeIss getExigibilidadeISS() {
+        return exigibilidadeISS;
+    }
+
+    public void setExigibilidadeISS(ExigibilidadeIss exigibilidadeISS) {
+        this.exigibilidadeISS = exigibilidadeISS;
+    }
+
+    public Integer getMunicipioIncidencia() {
+        return municipioIncidencia;
+    }
+
+    public void setMunicipioIncidencia(Integer municipioIncidencia) {
+        this.municipioIncidencia = municipioIncidencia;
+    }
+
+    public String getNumeroProcesso() {
+        return numeroProcesso;
+    }
+
+    public void setNumeroProcesso(String numeroProcesso) {
+        this.numeroProcesso = numeroProcesso;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("DadosServico [valoresDeclaracaoServico=");
+        builder.append(valoresDeclaracaoServico);
+        builder.append(", issRetido=");
+        builder.append(issRetido);
+        builder.append(", responsavelRetencao=");
+        builder.append(responsavelRetencao);
+        builder.append(", discriminacao=");
+        builder.append(discriminacao);
+        builder.append(", codigoMunicipio=");
+        builder.append(codigoMunicipio);
+        builder.append(", codigoPais=");
+        builder.append(codigoPais);
+        builder.append(", exigibilidadeISS=");
+        builder.append(exigibilidadeISS);
+        builder.append(", municipioIncidencia=");
+        builder.append(municipioIncidencia);
+        builder.append(", numeroProcesso=");
+        builder.append(numeroProcesso);
+        builder.append(", listaItensServico=");
+        builder.append(listaItensServico);
+        builder.append("]");
+        return builder.toString();
+    }
 
 }
