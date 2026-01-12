@@ -1,5 +1,7 @@
 package br.com.elotech.tributacao.oxm.reformatributaria;
 
+import br.com.elotech.tributacao.oxm.nfse.Endereco;
+
 public class Imovel {
 
     private String inscImobFisc;

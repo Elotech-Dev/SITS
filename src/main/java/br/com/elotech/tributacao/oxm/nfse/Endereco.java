@@ -15,8 +15,9 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
-public class Endereco {
+import br.com.elotech.tributacao.oxm.reformatributaria.EndExt;
 
+public class Endereco {
 	private String endereco;
 
 	private String numero;
@@ -35,13 +36,7 @@ public class Endereco {
 
 	private String cidadeNome;
 
-	public String getCidadeNome() {
-		return cidadeNome;
-	}
-
-	public void setCidadeNome(String cidadeNome) {
-		this.cidadeNome = cidadeNome;
-	}
+	private EndExt endExt;
 
 	public String getEndereco() {
 		return endereco;
@@ -57,6 +52,14 @@ public class Endereco {
 
 	public void setNumero(String numero) {
 		this.numero = numero;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
 	}
 
 	public String getBairro() {
@@ -99,12 +102,20 @@ public class Endereco {
 		this.cep = cep;
 	}
 
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
+	public EndExt getEndExt() {
+		return endExt;
 	}
 
-	public String getComplemento() {
-		return complemento;
+	public void setEndExt(EndExt endExt) {
+		this.endExt = endExt;
+	}
+
+	public String getCidadeNome() {
+		return cidadeNome;
+	}
+
+	public void setCidadeNome(String cidadeNome) {
+		this.cidadeNome = cidadeNome;
 	}
 
 	@Override
@@ -131,5 +142,4 @@ public class Endereco {
 		builder.append("]");
 		return builder.toString();
 	}
-
 }
