@@ -401,6 +401,11 @@
             <bind-xml name="Cep" node="element"/>
         </field>
 
+        <field name="endExt"
+               type="br.com.elotech.tributacao.oxm.reformatributaria.EndExt">
+            <bind-xml name="endExt"/>
+        </field>
+
     </class>
 
     <class name="br.com.elotech.tributacao.oxm.nfse.IdentificacaoOrgaoGerador">
@@ -960,7 +965,7 @@
         </field>
 
         <field name="endereco"
-               type="br.com.elotech.tributacao.oxm.reformatributaria.Endereco">
+               type="br.com.elotech.tributacao.oxm.nfse.Endereco">
             <bind-xml name="end"/>
         </field>
 
@@ -970,49 +975,6 @@
 
         <field name="email" type="string">
             <bind-xml name="email" node="element"/>
-        </field>
-
-    </class>
-
-    <class name="br.com.elotech.tributacao.oxm.reformatributaria.Endereco">
-
-        <map-to xml="end" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
-
-        <field name="endereco" type="string">
-            <bind-xml name="Endereco" node="element"/>
-        </field>
-
-        <field name="numero" type="string">
-            <bind-xml name="Numero" node="element"/>
-        </field>
-
-        <field name="complemento" type="string">
-            <bind-xml name="Complemento" node="element"/>
-        </field>
-
-        <field name="bairro" type="string">
-            <bind-xml name="Bairro" node="element"/>
-        </field>
-
-        <field name="codigoMunicipio" type="integer">
-            <bind-xml name="CodigoMunicipio" node="element"/>
-        </field>
-
-        <field name="uf" type="string">
-            <bind-xml name="Uf" node="element"/>
-        </field>
-
-        <field name="cep" type="string">
-            <bind-xml name="Cep" node="element"/>
-        </field>
-
-        <field name="codigoPais" type="string">
-            <bind-xml name="CodigoPais" node="element"/>
-        </field>
-
-        <field name="endExt"
-               type="br.com.elotech.tributacao.oxm.reformatributaria.EndExt">
-            <bind-xml name="endExt"/>
         </field>
 
     </class>
@@ -1052,7 +1014,7 @@
         </field>
 
         <field name="endereco"
-               type="br.com.elotech.tributacao.oxm.reformatributaria.Endereco">
+               type="br.com.elotech.tributacao.oxm.nfse.Endereco">
             <bind-xml name="end"/>
         </field>
 
