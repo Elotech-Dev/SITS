@@ -44,6 +44,7 @@ public class CancelamentoNfse {
 		builder.append("CancelamentoNfse [confirmacaoCancelamento=");
 		builder.append(confirmacaoCancelamento);
 		builder.append("]");
+
 		return builder.toString();
 	}
 
