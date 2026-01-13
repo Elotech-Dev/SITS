@@ -9,7 +9,6 @@ public class Destinatario {
 
     private Integer cnaoNif;
 
-
     private String xnome;
 
     private Integer fone;
