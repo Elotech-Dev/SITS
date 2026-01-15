@@ -1,14 +1,12 @@
 package br.com.elotech.tributacao.oxm.reformatributaria;
 
-public class EndExt {
+public class EnderecoExt {
 
     private String cpais;
 
     private String cendPost;
 
-
     private String xcidade;
-
 
     private String xestProvReg;
 

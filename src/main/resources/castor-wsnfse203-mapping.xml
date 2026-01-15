@@ -401,9 +401,9 @@
             <bind-xml name="Cep" node="element"/>
         </field>
 
-        <field name="endExt"
-               type="br.com.elotech.tributacao.oxm.reformatributaria.EndExt">
-            <bind-xml name="endExt"/>
+        <field name="enderecoExt"
+               type="br.com.elotech.tributacao.oxm.reformatributaria.EnderecoExt">
+            <bind-xml name="EnderecoExt"/>
         </field>
 
     </class>
@@ -983,9 +983,9 @@
 
     </class>
 
-    <class name="br.com.elotech.tributacao.oxm.reformatributaria.EndExt">
+    <class name="br.com.elotech.tributacao.oxm.reformatributaria.EnderecoExt">
 
-        <map-to xml="endExt" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
+        <map-to xml="EnderecoExt" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
 
         <field name="cendPost" type="string">
             <bind-xml name="cEndPost" node="element"/>
@@ -1242,6 +1242,10 @@
             <bind-xml name="NifTomador" node="element"/>
         </field>
 
+        <field name="naoNif" type="integer">
+            <bind-xml name="NaoNifTomador" node="element"/>
+        </field>
+
         <field name="razaoSocial" type="string">
             <bind-xml name="RazaoSocial" node="element"/>
         </field>
@@ -1288,7 +1292,6 @@
             <bind-xml name="InscricaoMunicipal" node="element"/>
         </field>
 
-
     </class>
 
     <class name="br.com.elotech.tributacao.oxm.nfse.DadosIntermediario">
@@ -1301,8 +1304,20 @@
             <bind-xml name="IdentificacaoIntermediario"/>
         </field>
 
+        <field name="nifIntermediario" type="string">
+            <bind-xml name="NifIntermediario" node="element"/>
+        </field>
+
+        <field name="naoNifIntermediario" type="integer">
+            <bind-xml name="NaoNifIntermediario" node="element"/>
+        </field>
+
         <field name="razaoSocial" type="string">
             <bind-xml name="RazaoSocial" node="element"/>
+        </field>
+
+        <field name="endereco" type="br.com.elotech.tributacao.oxm.nfse.Endereco">
+            <bind-xml name="Endereco"/>
         </field>
 
         <field name="codigoMunicipio" type="long">

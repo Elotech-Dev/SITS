@@ -21,6 +21,8 @@ public class DadosTomador {
 	
 	private String nifTomador;
 
+	private Integer naoNif;
+
 	private String razaoSocial;
 
 	private Endereco endereco;
@@ -44,6 +46,14 @@ public class DadosTomador {
 	public void setIdentificacaoTomador(
 			IdentificacaoTomador identificacaoTomador) {
 		this.identificacaoTomador = identificacaoTomador;
+	}
+
+	public Integer getNaoNif() {
+		return naoNif;
+	}
+
+	public void setNaoNif(Integer naoNif) {
+		this.naoNif = naoNif;
 	}
 
 	public String getRazaoSocial() {
