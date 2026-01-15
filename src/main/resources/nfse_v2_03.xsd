@@ -531,7 +531,222 @@
 			<xsd:minInclusive value="0" />
 		</xsd:restriction>
 	</xsd:simpleType>
-
+	<xsd:simpleType name="tsModoPrestacao">
+		<xsd:annotation>
+			<xsd:documentation>
+				Modo de Prestação:
+				0 - Desconhecido (tipo não informado na nota de origem);
+				1 - Transfronteiriço;
+				2 - Consumo no Brasil;
+				3 - Presença Comercial no Exterior;
+				4 - Movimento Temporário de Pessoas Físicas;
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve"/>
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tsVincPrest">
+		<xsd:annotation>
+			<xsd:documentation>
+				Vínculo entre as partes no negócio:
+				0 - Sem vínculo com o Tomador/Prestador
+				1 - Controlada;
+				2 - Controladora;
+				3 - Coligada;
+				4 - Matriz;
+				5 - Filial ou sucursal;
+				6 - Outro vínculo;
+				9 - Desconhecido;
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve"/>
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tsMecAFComExPrest">
+		<xsd:annotation>
+			<xsd:documentation>
+				Mecanismo de apoio/fomento ao Comércio Exterior utilizado pelo prestador do serviço:
+				00 - Desconhecido (tipo não informado na nota de origem);
+				01 - Nenhum;
+				02 - ACC - Adiantamento sobre Contrato de Câmbio – Redução a Zero do IR e do IOF;
+				03 - ACE – Adiantamento sobre Cambiais Entregues - Redução a Zero do IR e do IOF;
+				04 - BNDES-Exim Pós-Embarque – Serviços;
+				05 - BNDES-Exim Pré-Embarque - Serviços;
+				06 - FGE - Fundo de Garantia à Exportação;
+				07 - PROEX - EQUALIZAÇÃO
+				08 - PROEX - Financiamento;
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve"/>
+			<xsd:enumeration value="00"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tsMecAFComExToma">
+		<xsd:annotation>
+			<xsd:documentation>
+				Mecanismo de apoio/fomento ao Comércio Exterior utilizado pelo tomador do serviço:
+				00 - Desconhecido (tipo não informado na nota de origem);
+				01 - Nenhum;
+				02 - Adm. Pública e Repr. Internacional;
+				03 - Alugueis e Arrend. Mercantil de maquinas, equip., embarc. e aeronaves;
+				04 - Arrendamento Mercantil de aeronave para empresa de transporte aéreo público;
+				05 - Comissão a agentes externos na exportação;
+				06 - Despesas de armazenagem, mov. e transporte de carga no exterior;
+				07 - Eventos FIFA (subsidiária);
+				08 - Eventos FIFA;
+				09 - Fretes, arrendamentos de embarcações ou aeronaves e outros;
+				10 - Material Aeronáutico;
+				11 - Promoção de Bens no Exterior;
+				12 - Promoção de Dest. Turísticos Brasileiros;
+				13 - Promoção do Brasil no Exterior;
+				14 - Promoção Serviços no Exterior;
+				15 - RECINE;
+				16 - RECOPA;
+				17 - Registro e Manutenção de marcas, patentes e cultivares;
+				18 - REICOMP;
+				19 - REIDI;
+				20 - REPENEC;
+				21 - REPES;
+				22 - RETAERO;
+				23 - RETID;
+				24 - Royalties, Assistência Técnica, Científica e Assemelhados;
+				25 - Serviços de avaliação da conformidade vinculados aos Acordos da OMC;
+				26 - ZPE;
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve"/>
+			<xsd:enumeration value="00"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+			<xsd:enumeration value="09"/>
+			<xsd:enumeration value="10"/>
+			<xsd:enumeration value="11"/>
+			<xsd:enumeration value="12"/>
+			<xsd:enumeration value="13"/>
+			<xsd:enumeration value="14"/>
+			<xsd:enumeration value="15"/>
+			<xsd:enumeration value="16"/>
+			<xsd:enumeration value="17"/>
+			<xsd:enumeration value="18"/>
+			<xsd:enumeration value="19"/>
+			<xsd:enumeration value="20"/>
+			<xsd:enumeration value="21"/>
+			<xsd:enumeration value="22"/>
+			<xsd:enumeration value="23"/>
+			<xsd:enumeration value="24"/>
+			<xsd:enumeration value="25"/>
+			<xsd:enumeration value="26"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tsMovTempBens">
+		<xsd:annotation>
+			<xsd:documentation>
+				Vínculo da Operação à Movimentação Temporária de Bens:
+				0 - Desconhecido (tipo não informado na nota de origem);
+				1 - Não;
+				2 - Vinculada - Declaração de Importação;
+				3 - Vinculada - Declaração de Exportação;
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve"/>
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tsEnvMDIC">
+		<xsd:annotation>
+			<xsd:documentation>
+				Compartilhar as informações da NFS-e gerada a partir desta DPS com a Secretaria de Comércio Exterior:
+				0 - Não enviar para o MDIC;
+				1 - Enviar para o MDIC;
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve"/>
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tsNumDocImport">
+		<xsd:annotation>
+			<xsd:documentation>Número da Declaração de Importação (DI/DSI/DA/DRI-E) averbado</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="tsString">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tsNumRegExport">
+		<xsd:annotation>
+			<xsd:documentation>Número do Registro de Exportação (RE) averbado</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="tsString">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tsString">
+		<xsd:annotation>
+			<xsd:documentation>Tipo string genérico</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve"/>
+			<xsd:pattern value="[!-ÿ]{1}[ -ÿ]{0,}[!-ÿ]{1}|[!-ÿ]{1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tsDec15V2">
+		<xsd:annotation>
+			<xsd:documentation>Valor decimal com 1 a 15 dígitos mais 2 casas decimais</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve"/>
+			<xsd:pattern value="0|0\.[0-9]{2}|[1-9]{1}[0-9]{0,14}(\.[0-9]{2})?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tsCodMoeda">
+		<xsd:annotation>
+			<xsd:documentation>Tipo com código que identifica a moeda conforme tabela do BACEN</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve"/>
+			<xsd:maxLength value="3"/>
+			<xsd:pattern value="[0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 	
 	<xsd:complexType name="tcIdentificacaoNfse">
 		<xsd:sequence>
@@ -842,6 +1057,12 @@
 			</xsd:element>
 			<xsd:element name="IBSCBS" type="tcIBSCBS"
 				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="ComercioExterior" type="tcComercioExterior"
+						 minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Grupo de informações relativas à exportação/importação de serviço prestado</xsd:documentation>
+				</xsd:annotation>
+		    </xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -1371,8 +1592,6 @@
 		</xsd:complexType>
 	</xsd:element>
 
-
-
 	<xsd:element name="ConsultarNfseServicoTomadoEnvio">
 		<xsd:complexType>
 			<xsd:sequence>
@@ -1574,6 +1793,138 @@
 						 maxOccurs="1" />
 			<xsd:element name="totCIBS" type="tcTotCIbs" minOccurs="0"
 						 maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="tcComercioExterior">
+		<xsd:sequence>
+			<xsd:element name="mdPrestacao" type="tsModoPrestacao"
+						 minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>
+						Modo de Prestação:
+						0 - Desconhecido (tipo não informado na nota de origem);
+						1 - Transfronteiriço;
+						2 - Consumo no Brasil;
+						3 - Movimento Temporário de Pessoas Físicas;
+						4 - Consumo no Exterior;
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="vincPrest" type="tsVincPrest"
+						 minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>
+						Vínculo entre as partes no negócio:
+						0 - Sem vínculo com o Tomador/Prestador
+						1 - Controlada;
+						2 - Controladora;
+						3 - Coligada;
+						4 - Matriz;
+						5 - Filial ou sucursal;
+						6 - Outro vínculo;
+						9 - Desconhecido;
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="tpMoeda" type="tsCodMoeda"
+						 minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Identifica a moeda da transação comercial</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="vServMoeda" type="tsDec15V2"
+						 minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Valor do serviço prestado expresso em moeda estrangeira especificada em tpmoeda</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="mecAFComexP" type="tsMecAFComExPrest"
+						 minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>
+						Mecanismo de apoio/fomento ao Comércio Exterior utilizado pelo prestador do serviço:
+						00 - Desconhecido (tipo não informado na nota de origem);
+						01 - Nenhum;
+						02 - ACC - Adiantamento sobre Contrato de Câmbio – Redução a Zero do IR e do IOF;
+						03 - ACE – Adiantamento sobre Cambiais Entregues - Redução a Zero do IR e do IOF;
+						04 - BNDES-Exim Pós-Embarque – Serviços;
+						05 - BNDES-Exim Pré-Embarque - Serviços;
+						06 - FGE - Fundo de Garantia à Exportação;
+						07 - PROEX - EQUALIZAÇÃO
+						08 - PROEX - Financiamento;
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="mecAFComexT" type="tsMecAFComExToma"
+						 minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>
+						Mecanismo de apoio/fomento ao Comércio Exterior utilizado pelo tomador do serviço:
+						00 - Desconhecido (tipo não informado na nota de origem);
+						01 - Nenhum;
+						02 - Adm. Pública e Repr. Internacional;
+						03 - Alugueis e Arrend. Mercantil de maquinas, equip., embarc. e aeronaves;
+						04 - Arrendamento Mercantil de aeronave para empresa de transporte aéreo público;
+						05 - Comissão a agentes externos na exportação;
+						06 - Despesas de armazenagem, mov. e transporte de carga no exterior;
+						07 - Eventos FIFA (subsidiária);
+						08 - Eventos FIFA;
+						09 - Fretes, arrendamentos de embarcações ou aeronaves e outros;
+						10 - Material Aeronáutico;
+						11 - Promoção de Bens no Exterior;
+						12 - Promoção de Dest. Turísticos Brasileiros;
+						13 - Promoção do Brasil no Exterior;
+						14 - Promoção Serviços no Exterior;
+						15 - RECINE;
+						16 - RECOPA;
+						17 - Registro e Manutenção de marcas, patentes e cultivares;
+						18 - REICOMP;
+						19 - REIDI;
+						20 - REPENEC;
+						21 - REPES;
+						22 - RETAERO;
+						23 - RETID;
+						24 - Royalties, Assistência Técnica, Científica e Assemelhados;
+						25 - Serviços de avaliação da conformidade vinculados aos Acordos da OMC;
+						26 - ZPE;
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="movTempBens" type="tsMovTempBens"
+						 minOccurs="1" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>
+						Vínculo da Operação à Movimentação Temporária de Bens:
+						0 - Desconhecido (tipo não informado na nota de origem);
+						1 - Não;
+						2 - Vinculada - Declaração de Importação;
+						3 - Vinculada - Declaração de Exportação;
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="mdic" type="tsEnvMDIC"
+						 minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>
+						Compartilhar as informações da NFS-e gerada a partir desta DPS com a Secretaria de Comércio Exterior:
+						0 - Não enviar para o MDIC;
+						1 - Enviar para o MDIC;
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="nDI" type="tsNumDocImport"
+						 minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Número da Declaração de Importação (DI/DSI/DA/DRI-E) averbado</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="nRE" type="tsNumRegExport"
+						 minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>Número do Registro de Exportação (RE) averbado</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 

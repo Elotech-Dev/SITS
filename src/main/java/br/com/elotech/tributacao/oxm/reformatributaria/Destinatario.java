@@ -19,7 +19,6 @@ public class Destinatario {
 
     private CpfCnpj cpfCnpj;
 
-
     public String getNif() {
         return nif;
     }

@@ -15,6 +15,7 @@
 
 package br.com.elotech.tributacao.oxm.nfse;
 
+import br.com.elotech.tributacao.oxm.reformatributaria.ComercioExterior;
 import br.com.elotech.tributacao.oxm.reformatributaria.IbsCbs;
 
 public class DadosServico {
@@ -45,12 +46,22 @@ public class DadosServico {
 
     private IbsCbs ibsCbs;
 
+    private ComercioExterior comercioExterior;
+
     public IbsCbs getIbsCbs() {
         return ibsCbs;
     }
 
     public void setIbsCbs(IbsCbs ibsCbs) {
         this.ibsCbs = ibsCbs;
+    }
+
+    public ComercioExterior getComercioExterior() {
+        return comercioExterior;
+    }
+
+    public void setComercioExterior(ComercioExterior comercioExterior) {
+        this.comercioExterior = comercioExterior;
     }
 
     public ListaItensServico getListaItensServico() {
