@@ -987,6 +987,10 @@
 
         <map-to xml="EnderecoExt" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
 
+        <field name="cpais" type="string">
+            <bind-xml name="cPais" node="element"/>
+        </field>
+
         <field name="cendPost" type="string">
             <bind-xml name="cEndPost" node="element"/>
         </field>
@@ -997,10 +1001,6 @@
 
         <field name="xestProvReg" type="string">
             <bind-xml name="xEstProvReg" node="element"/>
-        </field>
-
-        <field name="cpais" type="string">
-            <bind-xml name="cPais" node="element"/>
         </field>
 
     </class>
