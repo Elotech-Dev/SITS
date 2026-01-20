@@ -9,7 +9,6 @@ public class Destinatario {
 
     private Integer cnaoNif;
 
-
     private String xnome;
 
     private Integer fone;
@@ -19,7 +18,6 @@ public class Destinatario {
     private Endereco endereco;
 
     private CpfCnpj cpfCnpj;
-
 
     public String getNif() {
         return nif;

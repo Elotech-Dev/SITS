@@ -19,9 +19,15 @@ public class DadosIntermediario {
 
 	private IdentificacaoIntermediario identificacaoIntermediario;
 
+	private String nifIntermediario;
+
+	private Integer naoNifIntermediario;
+
 	private String razaoSocial;
-	
+
 	private Long codigoMunicipio;
+
+	private Endereco endereco;
 
 	public IdentificacaoIntermediario getIdentificacaoIntermediario() {
 		return identificacaoIntermediario;
@@ -32,12 +38,36 @@ public class DadosIntermediario {
 		this.identificacaoIntermediario = identificacaoIntermediario;
 	}
 
+	public String getNifIntermediario() {
+		return nifIntermediario;
+	}
+
+	public void setNifIntermediario(String nifIntermediario) {
+		this.nifIntermediario = nifIntermediario;
+	}
+
+	public Integer getNaoNifIntermediario() {
+		return naoNifIntermediario;
+	}
+
+	public void setNaoNifIntermediario(Integer naoNifIntermediario) {
+		this.naoNifIntermediario = naoNifIntermediario;
+	}
+
 	public String getRazaoSocial() {
 		return razaoSocial;
 	}
 
 	public void setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 	
 	public Long getCodigoMunicipio() {

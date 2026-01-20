@@ -401,9 +401,9 @@
             <bind-xml name="Cep" node="element"/>
         </field>
 
-        <field name="endExt"
-               type="br.com.elotech.tributacao.oxm.reformatributaria.EndExt">
-            <bind-xml name="endExt"/>
+        <field name="enderecoExt"
+               type="br.com.elotech.tributacao.oxm.reformatributaria.EnderecoExt">
+            <bind-xml name="EnderecoExt"/>
         </field>
 
     </class>
@@ -730,7 +730,6 @@
             <bind-xml name="NumeroProcesso" node="element"/>
         </field>
 
-
         <field name="listaItensServico"
                type="br.com.elotech.tributacao.oxm.nfse.ListaItensServico">
             <bind-xml name="ListaItensServico"/>
@@ -739,6 +738,11 @@
         <field name="IbsCbs"
                type="br.com.elotech.tributacao.oxm.reformatributaria.IbsCbs">
             <bind-xml name="IBSCBS" node="element"/>
+        </field>
+
+        <field name="comercioExterior"
+               type="br.com.elotech.tributacao.oxm.reformatributaria.ComercioExterior">
+            <bind-xml name="ComercioExterior" node="element"/>
         </field>
 
     </class>
@@ -979,9 +983,9 @@
 
     </class>
 
-    <class name="br.com.elotech.tributacao.oxm.reformatributaria.EndExt">
+    <class name="br.com.elotech.tributacao.oxm.reformatributaria.EnderecoExt">
 
-        <map-to xml="endExt" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
+        <map-to xml="EnderecoExt" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
 
         <field name="cendPost" type="string">
             <bind-xml name="cEndPost" node="element"/>
@@ -1102,6 +1106,50 @@
 
     </class>
 
+    <class name="br.com.elotech.tributacao.oxm.reformatributaria.ComercioExterior">
+
+        <map-to xml="ComercioExterior" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
+
+        <field name="modoPrestacao" type="string">
+            <bind-xml name="mdPrestacao" node="element"/>
+        </field>
+
+        <field name="vinculoPartesNegocio" type="string">
+            <bind-xml name="vincPrest" node="element"/>
+        </field>
+
+        <field name="moeda" type="integer">
+            <bind-xml name="tpMoeda" node="element"/>
+        </field>
+
+        <field name="servicoMoedaEstrangeira" type="java.math.BigDecimal">
+            <bind-xml name="vServMoeda" node="element"/>
+        </field>
+
+        <field name="apoioComercioExteriorPrestadorServico" type="string">
+            <bind-xml name="mecAFComexP" node="element"/>
+        </field>
+
+        <field name="apoioComercioExteriorTomadorServico" type="string">
+            <bind-xml name="mecAFComexT" node="element"/>
+        </field>
+
+        <field name="vinculoOperacaoTemporariaBens" type="string">
+            <bind-xml name="movTempBens" node="element"/>
+        </field>
+
+        <field name="indicadorMdic" type="string">
+            <bind-xml name="mdic" node="element"/>
+        </field>
+
+        <field name="declaracaoImportacao" type="string">
+            <bind-xml name="nDI" node="element"/>
+        </field>
+
+        <field name="registroExportacao" type="string">
+            <bind-xml name="nRE" node="element"/>
+        </field>
+    </class>
 
     <class name="br.com.elotech.tributacao.oxm.nfse203.Tomador">
 
@@ -1194,6 +1242,10 @@
             <bind-xml name="NifTomador" node="element"/>
         </field>
 
+        <field name="naoNif" type="integer">
+            <bind-xml name="NaoNifTomador" node="element"/>
+        </field>
+
         <field name="razaoSocial" type="string">
             <bind-xml name="RazaoSocial" node="element"/>
         </field>
@@ -1240,7 +1292,6 @@
             <bind-xml name="InscricaoMunicipal" node="element"/>
         </field>
 
-
     </class>
 
     <class name="br.com.elotech.tributacao.oxm.nfse.DadosIntermediario">
@@ -1253,8 +1304,20 @@
             <bind-xml name="IdentificacaoIntermediario"/>
         </field>
 
+        <field name="nifIntermediario" type="string">
+            <bind-xml name="NifIntermediario" node="element"/>
+        </field>
+
+        <field name="naoNifIntermediario" type="integer">
+            <bind-xml name="NaoNifIntermediario" node="element"/>
+        </field>
+
         <field name="razaoSocial" type="string">
             <bind-xml name="RazaoSocial" node="element"/>
+        </field>
+
+        <field name="endereco" type="br.com.elotech.tributacao.oxm.nfse.Endereco">
+            <bind-xml name="Endereco"/>
         </field>
 
         <field name="codigoMunicipio" type="long">
