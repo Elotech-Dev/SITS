@@ -75,6 +75,8 @@ public class ValoresDeclaracaoServico {
 
 	private BigDecimal descontoCondicionado;
 
+	private String cstPisCofins;
+
 	public BigDecimal getValorServicos() {
 		return valorServicos;
 	}
@@ -297,6 +299,14 @@ public class ValoresDeclaracaoServico {
 
 	public void setDescontoCondicionado(BigDecimal descontoCondicionado) {
 		this.descontoCondicionado = descontoCondicionado;
+	}
+
+	public String getCstPisCofins() {
+		return cstPisCofins;
+	}
+
+	public void setCstPisCofins(String cstPisCofins) {
+		this.cstPisCofins = cstPisCofins;
 	}
 
 	@Override
