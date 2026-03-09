@@ -747,6 +747,11 @@
 			<xsd:pattern value="[0-9]{3}"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	<xsd:simpleType name="tsCstPisCofins">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{2}" />
+		</xsd:restriction>
+	</xsd:simpleType>
 	
 	<xsd:complexType name="tcIdentificacaoNfse">
 		<xsd:sequence>
@@ -960,7 +965,9 @@
 			<xsd:element name="DescontoIncondicionado" type="tsValor"
 				minOccurs="0" maxOccurs="1" />
 			<xsd:element name="DescontoCondicionado" type="tsValor"
-				minOccurs="0" maxOccurs="1" />																				
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="CSTPisCofins" type="tsCstPisCofins"
+						 minOccurs="0" maxOccurs="1" />
 		</xsd:sequence>
 	</xsd:complexType>
 
