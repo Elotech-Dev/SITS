@@ -329,6 +329,7 @@
 			<xsd:whiteSpace value="collapse" />
 		</xsd:restriction>
 	</xsd:simpleType>
+
 	<xsd:simpleType name="tsData">
 		<xsd:restriction base="xsd:date" />
 	</xsd:simpleType>
@@ -1171,7 +1172,9 @@
 			<xsd:element name="ChaveAcesso" type="tsChaveAcesso"
 				minOccurs="1" maxOccurs="1" />
 			<xsd:element name="ChaveAcessoNacional" type="tsChaveAcessoNacional"
-						 minOccurs="0" maxOccurs="1" />
+					 minOccurs="0" maxOccurs="1" />
+			<xsd:element name="IdDps" type="xsd:string"
+				minOccurs="0" maxOccurs="1" />
 		</xsd:sequence>
 	</xsd:complexType>
 

@@ -29,12 +29,32 @@ public class InfNfse {
 
 	private String chaveAcesso;
 
+	private String chaveAcessoNacional;
+
+	private String idDps;
+
 	public String getChaveAcesso() {
 		return chaveAcesso;
 	}
 
 	public void setChaveAcesso(String chaveAcesso) {
 		this.chaveAcesso = chaveAcesso;
+	}
+
+	public String getChaveAcessoNacional() {
+		return chaveAcessoNacional;
+	}
+
+	public void setChaveAcessoNacional(String chaveAcessoNacional) {
+		this.chaveAcessoNacional = chaveAcessoNacional;
+	}
+
+	public String getIdDps() {
+		return idDps;
+	}
+
+	public void setIdDps(String idDps) {
+		this.idDps = idDps;
 	}
 
 	public Integer getNumero() {
