@@ -1485,6 +1485,14 @@
             <bind-xml name="ChaveAcesso" node="element"/>
         </field>
 
+        <field name="chaveAcessoNacional" type="string">
+            <bind-xml name="ChaveAcessoNacional" node="element"/>
+        </field>
+
+        <field name="idDps" type="string">
+            <bind-xml name="IdDps" node="element"/>
+        </field>
+
     </class>
 
     <class name="br.com.elotech.tributacao.oxm.nfse.Nfse">
