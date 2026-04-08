@@ -6,11 +6,15 @@ public class ValoresIbsCbs {
 
     private BigDecimal vbc;
 
+    private BigDecimal vCalcReeRepRes;
+
     private UfIbs ufIbs;
 
     private MunIbs munIbs;
 
     private FedCbs fedCbs;
+
+    private TributoIbsCbs tributoIbsCbs;
 
     public BigDecimal getVbc() {
         return vbc;
@@ -18,6 +22,14 @@ public class ValoresIbsCbs {
 
     public void setVbc(BigDecimal vbc) {
         this.vbc = vbc;
+    }
+
+    public BigDecimal getVCalcReeRepRes() {
+        return vCalcReeRepRes;
+    }
+
+    public void setVCalcReeRepRes(BigDecimal vCalcReeRepRes) {
+        this.vCalcReeRepRes = vCalcReeRepRes;
     }
 
     public UfIbs getUfIbs() {
@@ -42,5 +54,13 @@ public class ValoresIbsCbs {
 
     public void setFedCbs(FedCbs fedCbs) {
         this.fedCbs = fedCbs;
+    }
+
+    public TributoIbsCbs getTributoIbsCbs() {
+        return tributoIbsCbs;
+    }
+
+    public void setTributoIbsCbs(TributoIbsCbs tributoIbsCbs) {
+        this.tributoIbsCbs = tributoIbsCbs;
     }
 }
