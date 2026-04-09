@@ -306,7 +306,7 @@
 	</xsd:simpleType>
 	<xsd:simpleType name="tsDescricaoMensagemAlerta">
 		<xsd:restriction base="xsd:string">
-			<xsd:maxLength value="200" />
+			<xsd:maxLength value="1000" />
 			<xsd:minLength value="1" />
 			<xsd:whiteSpace value="collapse" />
 		</xsd:restriction>
@@ -1175,6 +1175,8 @@
 					 minOccurs="0" maxOccurs="1" />
 			<xsd:element name="IdDps" type="xsd:string"
 				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="IBSCBS" type="tcIBSCBS"
+				minOccurs="0" maxOccurs="1" />
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -1797,6 +1799,9 @@
 						 minOccurs="0" maxOccurs="1" />
 			<xsd:element name="xLocalidadeIncid" type="tsXLocalidadeIncid"
 						 minOccurs="0" maxOccurs="1" />
+			<xsd:element name="finNFSe" type="tsFinNFSe" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="cIndOp" type="tsCIndOp" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="indDest" type="tsIndDest" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="pRedutor" type="tsAliquotaEfetiva"
 						 minOccurs="0" maxOccurs="1" />
 			<xsd:element name="valores" type="tcValoresIBSCBS" minOccurs="0"
@@ -1975,11 +1980,15 @@
 		<xsd:sequence>
 			<xsd:element name="vBC" type="tsVBC"
 						 minOccurs="0" maxOccurs="1" />
+			<xsd:element name="vCalcReeRepRes" type="tsValor"
+						 minOccurs="0" maxOccurs="1" />
 			<xsd:element name="uf" type="tcUfIbs"
 						 minOccurs="0" maxOccurs="1" />
 			<xsd:element name="mun" type="tcMunIbs"
 						 minOccurs="0" maxOccurs="1" />
 			<xsd:element name="fed" type="tcFedCbs" minOccurs="0"
+						 maxOccurs="1" />
+			<xsd:element name="trib" type="tcTributoIbsCbs" minOccurs="0"
 						 maxOccurs="1" />
 		</xsd:sequence>
 	</xsd:complexType>

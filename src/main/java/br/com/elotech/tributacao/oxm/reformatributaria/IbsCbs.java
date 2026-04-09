@@ -8,6 +8,12 @@ public class IbsCbs {
 
     private String localidadeIncid_x;
 
+    private Integer finNFSe;
+
+    private Integer cindOp;
+
+    private Integer indDest;
+
     private BigDecimal redutor;
 
     private ValoresIbsCbs valoresIbsCbs;
@@ -28,6 +34,30 @@ public class IbsCbs {
 
     public void setLocalidadeIncid_x(String localidadeIncid_x) {
         this.localidadeIncid_x = localidadeIncid_x;
+    }
+
+    public Integer getFinNFSe() {
+        return finNFSe;
+    }
+
+    public void setFinNFSe(Integer finNFSe) {
+        this.finNFSe = finNFSe;
+    }
+
+    public Integer getCindOp() {
+        return cindOp;
+    }
+
+    public void setCindOp(Integer cindOp) {
+        this.cindOp = cindOp;
+    }
+
+    public Integer getIndDest() {
+        return indDest;
+    }
+
+    public void setIndDest(Integer indDest) {
+        this.indDest = indDest;
     }
 
     public BigDecimal getRedutor() {

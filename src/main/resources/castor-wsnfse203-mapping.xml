@@ -763,6 +763,18 @@
             <bind-xml name="xLocalidadeIncid" node="element"/>
         </field>
 
+        <field name="finNFSe" type="integer">
+            <bind-xml name="finNFSe" node="element"/>
+        </field>
+
+        <field name="cindOp" type="integer">
+            <bind-xml name="cIndOp" node="element"/>
+        </field>
+
+        <field name="indDest" type="integer">
+            <bind-xml name="indDest" node="element"/>
+        </field>
+
         <field name="redutor" type="java.math.BigDecimal">
             <bind-xml name="pRedutor" node="element"/>
         </field>
@@ -787,6 +799,10 @@
             <bind-xml name="vBC" node="element"/>
         </field>
 
+        <field name="vCalcReeRepRes" type="java.math.BigDecimal">
+            <bind-xml name="vCalcReeRepRes" node="element"/>
+        </field>
+
         <field name="ufIbs"
                type="br.com.elotech.tributacao.oxm.reformatributaria.UfIbs">
             <bind-xml name="uf"/>
@@ -800,6 +816,11 @@
         <field name="fedCbs"
                type="br.com.elotech.tributacao.oxm.reformatributaria.FedCbs">
             <bind-xml name="fed"/>
+        </field>
+
+        <field name="tributoIbsCbs"
+               type="br.com.elotech.tributacao.oxm.reformatributaria.TributoIbsCbs">
+            <bind-xml name="trib"/>
         </field>
 
     </class>
@@ -884,6 +905,121 @@
         <field name="gcbs"
                type="br.com.elotech.tributacao.oxm.reformatributaria.GCbs">
             <bind-xml name="gCBS"/>
+        </field>
+
+    </class>
+
+    <class name="br.com.elotech.tributacao.oxm.reformatributaria.GIbs">
+
+        <map-to xml="gIBS" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
+
+        <field name="vIbsTot" type="java.math.BigDecimal"
+               get-method="getvIbsTot" set-method="setvIbsTot">
+            <bind-xml name="vIBSTot" node="element"/>
+        </field>
+
+        <field name="gIbsCredPres"
+               type="br.com.elotech.tributacao.oxm.reformatributaria.GIbsCredPres"
+               get-method="getgIbsCredPres" set-method="setgIbsCredPres">
+            <bind-xml name="gIBSCredPres"/>
+        </field>
+
+        <field name="gIbsUfTot"
+               type="br.com.elotech.tributacao.oxm.reformatributaria.GIbsUfTot"
+               get-method="getgIbsUfTot" set-method="setgIbsUfTot">
+            <bind-xml name="gIBSUFTot"/>
+        </field>
+
+        <field name="gIbsMunTot"
+               type="br.com.elotech.tributacao.oxm.reformatributaria.GIbsMunTot"
+               get-method="getgIbsMunTot" set-method="setgIbsMunTot">
+            <bind-xml name="gIBSMunTot"/>
+        </field>
+
+    </class>
+
+    <class name="br.com.elotech.tributacao.oxm.reformatributaria.GCbs">
+
+        <map-to xml="gCBS" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
+
+        <field name="gCbsCredPres"
+               type="br.com.elotech.tributacao.oxm.reformatributaria.GCbsCredPres"
+               get-method="getgCbsCredPres" set-method="setgCbsCredPres">
+            <bind-xml name="gCBSCredPres"/>
+        </field>
+
+    </class>
+
+    <class name="br.com.elotech.tributacao.oxm.reformatributaria.GIbsUfTot">
+
+        <map-to xml="gIBSUFTot" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
+
+        <field name="vDifUf" type="java.math.BigDecimal"
+               get-method="getvDifUf" set-method="setvDifUf">
+            <bind-xml name="vDifUF" node="element"/>
+        </field>
+
+        <field name="vIBsUf" type="java.math.BigDecimal"
+               get-method="getvIBsUf" set-method="setvIBsUf">
+            <bind-xml name="vIBSUF" node="element"/>
+        </field>
+
+    </class>
+
+    <class name="br.com.elotech.tributacao.oxm.reformatributaria.GIbsMunTot">
+
+        <map-to xml="gIBSMunTot" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
+
+        <field name="vDifMun" type="java.math.BigDecimal"
+               get-method="getvDifMun" set-method="setvDifMun">
+            <bind-xml name="vDifMun" node="element"/>
+        </field>
+
+        <field name="vIBSMun" type="java.math.BigDecimal"
+               get-method="getvIBSMun" set-method="setvIBSMun">
+            <bind-xml name="vIBSMun" node="element"/>
+        </field>
+
+    </class>
+
+    <class name="br.com.elotech.tributacao.oxm.reformatributaria.GCbsCredPres">
+
+        <map-to xml="gCBSCredPres" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
+
+        <field name="pCredPresCbs" type="java.math.BigDecimal"
+               get-method="getpCredPresCbs" set-method="setpCredPresCbs">
+            <bind-xml name="pCredPresCBS" node="element"/>
+        </field>
+
+        <field name="vCredPresCbs" type="java.math.BigDecimal"
+               get-method="getvCredPresCbs" set-method="setvCredPresCbs">
+            <bind-xml name="vCredPresCBS" node="element"/>
+        </field>
+
+        <field name="vDifCbs" type="java.math.BigDecimal"
+               get-method="getvDifCbs" set-method="setvDifCbs">
+            <bind-xml name="vDifCBS" node="element"/>
+        </field>
+
+        <field name="vCbs" type="java.math.BigDecimal"
+               get-method="getvCbs" set-method="setvCbs">
+            <bind-xml name="vCBS" node="element"/>
+        </field>
+
+    </class>
+
+    <class name="br.com.elotech.tributacao.oxm.reformatributaria.GIbsCredPres">
+
+        <map-to xml="gIBSCredPres" ns-uri="http://shad.elotech.com.br/schemas/iss/nfse_v2_03.xsd"/>
+
+        <field name="vDifUf" type="java.math.BigDecimal"
+               get-method="getvDifUf" set-method="setvDifUf">
+            <bind-xml name="vDifUF" node="element"/>
+        </field>
+
+        <field name="vIBsUf" type="java.math.BigDecimal"
+               get-method="getvIBsUf" set-method="setvIBsUf">
+            <bind-xml name="vIBSUF" node="element"/>
         </field>
 
     </class>
@@ -1491,6 +1627,11 @@
 
         <field name="idDps" type="string">
             <bind-xml name="IdDps" node="element"/>
+        </field>
+
+        <field name="ibsCbs"
+               type="br.com.elotech.tributacao.oxm.reformatributaria.IbsCbs">
+            <bind-xml name="IBSCBS"/>
         </field>
 
     </class>

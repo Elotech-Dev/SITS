@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import br.com.elotech.tributacao.oxm.nfse203.PrestadorServico;
+import br.com.elotech.tributacao.oxm.reformatributaria.IbsCbs;
 
 public class InfNfse {
 
@@ -33,6 +34,8 @@ public class InfNfse {
 
 	private String idDps;
 
+	private IbsCbs ibsCbs;
+
 	public String getChaveAcesso() {
 		return chaveAcesso;
 	}
@@ -55,6 +58,14 @@ public class InfNfse {
 
 	public void setIdDps(String idDps) {
 		this.idDps = idDps;
+	}
+
+	public IbsCbs getIbsCbs() {
+		return ibsCbs;
+	}
+
+	public void setIbsCbs(IbsCbs ibsCbs) {
+		this.ibsCbs = ibsCbs;
 	}
 
 	public Integer getNumero() {
