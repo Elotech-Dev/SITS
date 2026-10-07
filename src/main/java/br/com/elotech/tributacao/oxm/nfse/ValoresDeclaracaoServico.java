@@ -77,6 +77,8 @@ public class ValoresDeclaracaoServico {
 
 	private String cstPisCofins;
 
+	private BigDecimal valorBaseCalculoPisCofins;
+
 	public BigDecimal getValorServicos() {
 		return valorServicos;
 	}
@@ -307,6 +309,14 @@ public class ValoresDeclaracaoServico {
 
 	public void setCstPisCofins(String cstPisCofins) {
 		this.cstPisCofins = cstPisCofins;
+	}
+
+	public BigDecimal getValorBaseCalculoPisCofins() {
+		return valorBaseCalculoPisCofins;
+	}
+
+	public void setValorBaseCalculoPisCofins(BigDecimal valorBaseCalculoPisCofins) {
+		this.valorBaseCalculoPisCofins = valorBaseCalculoPisCofins;
 	}
 
 	@Override

@@ -580,6 +580,10 @@
             <bind-xml name="CSTPisCofins" node="element"/>
         </field>
 
+        <field name="valorBaseCalculoPisCofins" type="big-decimal">
+            <bind-xml name="ValorBaseCalculoPisCofins" node="element"/>
+        </field>
+
     </class>
 
     <class name="br.com.elotech.tributacao.oxm.nfse.DadosDeducao">
