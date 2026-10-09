@@ -969,6 +969,8 @@
 				minOccurs="0" maxOccurs="1" />
 			<xsd:element name="CSTPisCofins" type="tsCstPisCofins"
 						 minOccurs="0" maxOccurs="1" />
+			<xsd:element name="ValorBaseCalculoPisCofins" type="tsValor"
+						 minOccurs="0" maxOccurs="1" />
 		</xsd:sequence>
 	</xsd:complexType>
 
